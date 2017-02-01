@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1B9F5E71E02AAE90024AB95 /* RABatteryLevelPercentage.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */; };
+		F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */; };
+		F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5EC1E02B0040024AB95 /* WriteAction.m */; };
+		F1B9F5F11E02B0340024AB95 /* WADevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5F01E02B0340024AB95 /* WADevice.m */; };
+		F1B9F5F61E02B0810024AB95 /* WAConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5F51E02B0810024AB95 /* WAConsole.m */; };
+		F1B9F5F91E02D26A0024AB95 /* WAVisualAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5F81E02D26A0024AB95 /* WAVisualAlert.m */; };
+		F1B9F5FC1E03EB560024AB95 /* WARest.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5FB1E03EB560024AB95 /* WARest.m */; };
+		F1B9F5FF1E04051E0024AB95 /* RAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5FE1E04051E0024AB95 /* RAObject.m */; };
+		F1B9F6021E0409500024AB95 /* WAUpdateObjectAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F6011E0409500024AB95 /* WAUpdateObjectAttribute.m */; };
+		F1B9F6061E0815660024AB95 /* DefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F6051E0815650024AB95 /* DefaultView.m */; };
+		F1B9F6081E0815730024AB95 /* DefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B9F6071E0815730024AB95 /* DefaultView.xib */; };
+		F1B9F60C1E0818DE0024AB95 /* CurrentDeviceLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F60B1E0818DE0024AB95 /* CurrentDeviceLocationView.m */; };
+		F1B9F60E1E0818E80024AB95 /* CurrentDeviceLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B9F60D1E0818E80024AB95 /* CurrentDeviceLocationView.xib */; };
+		F1B9F6111E081A790024AB95 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B9F6101E081A790024AB95 /* MapKit.framework */; };
+		F1D575DA1E0145F900AC10DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575D91E0145F900AC10DE /* main.m */; };
+		F1D575DD1E0145F900AC10DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575DC1E0145F900AC10DE /* AppDelegate.m */; };
+		F1D575E01E0145F900AC10DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575DF1E0145F900AC10DE /* ViewController.m */; };
+		F1D575E31E0145F900AC10DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D575E11E0145F900AC10DE /* Main.storyboard */; };
+		F1D575E51E0145F900AC10DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D575E41E0145F900AC10DE /* Assets.xcassets */; };
+		F1D575E81E0145F900AC10DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D575E61E0145F900AC10DE /* LaunchScreen.storyboard */; };
+		F1D575FB1E01462000AC10DE /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575F01E01462000AC10DE /* Action.m */; };
+		F1D575FC1E01462000AC10DE /* ClassAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575F21E01462000AC10DE /* ClassAttribute.m */; };
+		F1D575FD1E01462000AC10DE /* Condition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575F41E01462000AC10DE /* Condition.m */; };
+		F1D575FE1E01462000AC10DE /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575F61E01462000AC10DE /* Object.m */; };
+		F1D575FF1E01462000AC10DE /* ReadAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575F81E01462000AC10DE /* ReadAction.m */; };
+		F1D576001E01462000AC10DE /* Trigger.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D575FA1E01462000AC10DE /* Trigger.m */; };
+		F1D576041E0149DA00AC10DE /* RADevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576031E0149DA00AC10DE /* RADevice.m */; };
+		F1D576071E0149E600AC10DE /* RARest.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576061E0149E600AC10DE /* RARest.m */; };
+		F1D5760A1E0149FC00AC10DE /* RABatteryLevelNormalized.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576091E0149FC00AC10DE /* RABatteryLevelNormalized.m */; };
+		F1D5760E1E014A7700AC10DE /* RABatteryStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D5760D1E014A7700AC10DE /* RABatteryStatus.m */; };
+		F1D576111E014ABD00AC10DE /* RADeviceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576101E014ABD00AC10DE /* RADeviceOrientation.m */; };
+		F1D576141E014F3000AC10DE /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576131E014F3000AC10DE /* LocationManager.m */; };
+		F1D576171E015AB000AC10DE /* RACurrentDeviceLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576161E015AB000AC10DE /* RACurrentDeviceLocation.m */; };
+		F1D5761A1E015BF900AC10DE /* Value.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576191E015BF900AC10DE /* Value.m */; };
+		F1D5761D1E015C1E00AC10DE /* NumberValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D5761C1E015C1E00AC10DE /* NumberValue.m */; };
+		F1D576211E015D9900AC10DE /* StringValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D576201E015D9900AC10DE /* StringValue.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F1B9F5E51E02AAE90024AB95 /* RABatteryLevelPercentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatteryLevelPercentage.h; sourceTree = "<group>"; };
+		F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatteryLevelPercentage.m; sourceTree = "<group>"; };
+		F1B9F5E81E02AD060024AB95 /* RAGetCurrentSeconds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentSeconds.h; sourceTree = "<group>"; };
+		F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentSeconds.m; sourceTree = "<group>"; };
+		F1B9F5EB1E02B0040024AB95 /* WriteAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteAction.h; sourceTree = "<group>"; };
+		F1B9F5EC1E02B0040024AB95 /* WriteAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteAction.m; sourceTree = "<group>"; };
+		F1B9F5EF1E02B0340024AB95 /* WADevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADevice.h; sourceTree = "<group>"; };
+		F1B9F5F01E02B0340024AB95 /* WADevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADevice.m; sourceTree = "<group>"; };
+		F1B9F5F41E02B0810024AB95 /* WAConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAConsole.h; sourceTree = "<group>"; };
+		F1B9F5F51E02B0810024AB95 /* WAConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAConsole.m; sourceTree = "<group>"; };
+		F1B9F5F71E02D26A0024AB95 /* WAVisualAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAVisualAlert.h; sourceTree = "<group>"; };
+		F1B9F5F81E02D26A0024AB95 /* WAVisualAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAVisualAlert.m; sourceTree = "<group>"; };
+		F1B9F5FA1E03EB560024AB95 /* WARest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WARest.h; sourceTree = "<group>"; };
+		F1B9F5FB1E03EB560024AB95 /* WARest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WARest.m; sourceTree = "<group>"; };
+		F1B9F5FD1E04051E0024AB95 /* RAObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAObject.h; sourceTree = "<group>"; };
+		F1B9F5FE1E04051E0024AB95 /* RAObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAObject.m; sourceTree = "<group>"; };
+		F1B9F6001E0409500024AB95 /* WAUpdateObjectAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAUpdateObjectAttribute.h; sourceTree = "<group>"; };
+		F1B9F6011E0409500024AB95 /* WAUpdateObjectAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAUpdateObjectAttribute.m; sourceTree = "<group>"; };
+		F1B9F6041E0815650024AB95 /* DefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultView.h; sourceTree = "<group>"; };
+		F1B9F6051E0815650024AB95 /* DefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultView.m; sourceTree = "<group>"; };
+		F1B9F6071E0815730024AB95 /* DefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultView.xib; sourceTree = "<group>"; };
+		F1B9F60A1E0818DE0024AB95 /* CurrentDeviceLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentDeviceLocationView.h; sourceTree = "<group>"; };
+		F1B9F60B1E0818DE0024AB95 /* CurrentDeviceLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentDeviceLocationView.m; sourceTree = "<group>"; };
+		F1B9F60D1E0818E80024AB95 /* CurrentDeviceLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentDeviceLocationView.xib; sourceTree = "<group>"; };
+		F1B9F6101E081A790024AB95 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F1D575D51E0145F900AC10DE /* TriggersV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriggersV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D575D91E0145F900AC10DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F1D575DB1E0145F900AC10DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F1D575DC1E0145F900AC10DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F1D575DE1E0145F900AC10DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F1D575DF1E0145F900AC10DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F1D575E21E0145F900AC10DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1D575E41E0145F900AC10DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1D575E71E0145F900AC10DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1D575E91E0145F900AC10DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1D575EF1E01462000AC10DE /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		F1D575F01E01462000AC10DE /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
+		F1D575F11E01462000AC10DE /* ClassAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassAttribute.h; sourceTree = "<group>"; };
+		F1D575F21E01462000AC10DE /* ClassAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassAttribute.m; sourceTree = "<group>"; };
+		F1D575F31E01462000AC10DE /* Condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
+		F1D575F41E01462000AC10DE /* Condition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Condition.m; sourceTree = "<group>"; };
+		F1D575F51E01462000AC10DE /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		F1D575F61E01462000AC10DE /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
+		F1D575F71E01462000AC10DE /* ReadAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadAction.h; sourceTree = "<group>"; };
+		F1D575F81E01462000AC10DE /* ReadAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadAction.m; sourceTree = "<group>"; };
+		F1D575F91E01462000AC10DE /* Trigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trigger.h; sourceTree = "<group>"; };
+		F1D575FA1E01462000AC10DE /* Trigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trigger.m; sourceTree = "<group>"; };
+		F1D576021E0149DA00AC10DE /* RADevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADevice.h; sourceTree = "<group>"; };
+		F1D576031E0149DA00AC10DE /* RADevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADevice.m; sourceTree = "<group>"; };
+		F1D576051E0149E600AC10DE /* RARest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RARest.h; sourceTree = "<group>"; };
+		F1D576061E0149E600AC10DE /* RARest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RARest.m; sourceTree = "<group>"; };
+		F1D576081E0149FC00AC10DE /* RABatteryLevelNormalized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatteryLevelNormalized.h; sourceTree = "<group>"; };
+		F1D576091E0149FC00AC10DE /* RABatteryLevelNormalized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatteryLevelNormalized.m; sourceTree = "<group>"; };
+		F1D5760C1E014A7700AC10DE /* RABatteryStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatteryStatus.h; sourceTree = "<group>"; };
+		F1D5760D1E014A7700AC10DE /* RABatteryStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatteryStatus.m; sourceTree = "<group>"; };
+		F1D5760F1E014ABD00AC10DE /* RADeviceOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADeviceOrientation.h; sourceTree = "<group>"; };
+		F1D576101E014ABD00AC10DE /* RADeviceOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceOrientation.m; sourceTree = "<group>"; };
+		F1D576121E014F3000AC10DE /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		F1D576131E014F3000AC10DE /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		F1D576151E015AB000AC10DE /* RACurrentDeviceLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACurrentDeviceLocation.h; sourceTree = "<group>"; };
+		F1D576161E015AB000AC10DE /* RACurrentDeviceLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACurrentDeviceLocation.m; sourceTree = "<group>"; };
+		F1D576181E015BF900AC10DE /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
+		F1D576191E015BF900AC10DE /* Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Value.m; sourceTree = "<group>"; };
+		F1D5761B1E015C1E00AC10DE /* NumberValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberValue.h; sourceTree = "<group>"; };
+		F1D5761C1E015C1E00AC10DE /* NumberValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberValue.m; sourceTree = "<group>"; };
+		F1D5761F1E015D9900AC10DE /* StringValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringValue.h; sourceTree = "<group>"; };
+		F1D576201E015D9900AC10DE /* StringValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringValue.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1D575D21E0145F900AC10DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B9F6111E081A790024AB95 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1B9F5EE1E02B00D0024AB95 /* WriteActions */ = {
+			isa = PBXGroup;
+			children = (
+				F1B9F5EB1E02B0040024AB95 /* WriteAction.h */,
+				F1B9F5EC1E02B0040024AB95 /* WriteAction.m */,
+				F1B9F5EF1E02B0340024AB95 /* WADevice.h */,
+				F1B9F5F01E02B0340024AB95 /* WADevice.m */,
+				F1B9F5F41E02B0810024AB95 /* WAConsole.h */,
+				F1B9F5F51E02B0810024AB95 /* WAConsole.m */,
+				F1B9F5F71E02D26A0024AB95 /* WAVisualAlert.h */,
+				F1B9F5F81E02D26A0024AB95 /* WAVisualAlert.m */,
+				F1B9F5FA1E03EB560024AB95 /* WARest.h */,
+				F1B9F5FB1E03EB560024AB95 /* WARest.m */,
+				F1B9F6001E0409500024AB95 /* WAUpdateObjectAttribute.h */,
+				F1B9F6011E0409500024AB95 /* WAUpdateObjectAttribute.m */,
+			);
+			name = WriteActions;
+			sourceTree = "<group>";
+		};
+		F1B9F5F21E02B04A0024AB95 /* DateAndTime */ = {
+			isa = PBXGroup;
+			children = (
+				F1B9F5E81E02AD060024AB95 /* RAGetCurrentSeconds.h */,
+				F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */,
+			);
+			name = DateAndTime;
+			sourceTree = "<group>";
+		};
+		F1B9F5F31E02B0560024AB95 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F1B9F6091E0818B70024AB95 /* CurrentDeviceLocation */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		F1B9F6031E0815530024AB95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1B9F6041E0815650024AB95 /* DefaultView.h */,
+				F1B9F6051E0815650024AB95 /* DefaultView.m */,
+				F1B9F6071E0815730024AB95 /* DefaultView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F1B9F6091E0818B70024AB95 /* CurrentDeviceLocation */ = {
+			isa = PBXGroup;
+			children = (
+				F1D576151E015AB000AC10DE /* RACurrentDeviceLocation.h */,
+				F1D576161E015AB000AC10DE /* RACurrentDeviceLocation.m */,
+				F1B9F60A1E0818DE0024AB95 /* CurrentDeviceLocationView.h */,
+				F1B9F60B1E0818DE0024AB95 /* CurrentDeviceLocationView.m */,
+				F1B9F60D1E0818E80024AB95 /* CurrentDeviceLocationView.xib */,
+			);
+			name = CurrentDeviceLocation;
+			sourceTree = "<group>";
+		};
+		F1B9F60F1E081A790024AB95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1B9F6101E081A790024AB95 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1D575CC1E0145F900AC10DE = {
+			isa = PBXGroup;
+			children = (
+				F1D575D71E0145F900AC10DE /* TriggersV3 */,
+				F1D575D61E0145F900AC10DE /* Products */,
+				F1B9F60F1E081A790024AB95 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F1D575D61E0145F900AC10DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1D575D51E0145F900AC10DE /* TriggersV3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1D575D71E0145F900AC10DE /* TriggersV3 */ = {
+			isa = PBXGroup;
+			children = (
+				F1D576121E014F3000AC10DE /* LocationManager.h */,
+				F1D576131E014F3000AC10DE /* LocationManager.m */,
+				F1D575DB1E0145F900AC10DE /* AppDelegate.h */,
+				F1D575DC1E0145F900AC10DE /* AppDelegate.m */,
+				F1D575DE1E0145F900AC10DE /* ViewController.h */,
+				F1D575DF1E0145F900AC10DE /* ViewController.m */,
+				F1D575EF1E01462000AC10DE /* Action.h */,
+				F1D575F01E01462000AC10DE /* Action.m */,
+				F1B9F6031E0815530024AB95 /* Views */,
+				F1B9F5EE1E02B00D0024AB95 /* WriteActions */,
+				F1D576011E0149AE00AC10DE /* ReadActions */,
+				F1D575F51E01462000AC10DE /* Object.h */,
+				F1D575F61E01462000AC10DE /* Object.m */,
+				F1D5761E1E015C2200AC10DE /* Value */,
+				F1D575F11E01462000AC10DE /* ClassAttribute.h */,
+				F1D575F21E01462000AC10DE /* ClassAttribute.m */,
+				F1D575F31E01462000AC10DE /* Condition.h */,
+				F1D575F41E01462000AC10DE /* Condition.m */,
+				F1D575F91E01462000AC10DE /* Trigger.h */,
+				F1D575FA1E01462000AC10DE /* Trigger.m */,
+				F1D575E11E0145F900AC10DE /* Main.storyboard */,
+				F1D575E41E0145F900AC10DE /* Assets.xcassets */,
+				F1D575E61E0145F900AC10DE /* LaunchScreen.storyboard */,
+				F1D575E91E0145F900AC10DE /* Info.plist */,
+				F1D575D81E0145F900AC10DE /* Supporting Files */,
+			);
+			path = TriggersV3;
+			sourceTree = "<group>";
+		};
+		F1D575D81E0145F900AC10DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1D575D91E0145F900AC10DE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1D576011E0149AE00AC10DE /* ReadActions */ = {
+			isa = PBXGroup;
+			children = (
+				F1D575F71E01462000AC10DE /* ReadAction.h */,
+				F1D575F81E01462000AC10DE /* ReadAction.m */,
+				F1D576051E0149E600AC10DE /* RARest.h */,
+				F1D576061E0149E600AC10DE /* RARest.m */,
+				F1D576021E0149DA00AC10DE /* RADevice.h */,
+				F1D576031E0149DA00AC10DE /* RADevice.m */,
+				F1B9F5FD1E04051E0024AB95 /* RAObject.h */,
+				F1B9F5FE1E04051E0024AB95 /* RAObject.m */,
+				F1B9F5F31E02B0560024AB95 /* Location */,
+				F1B9F5F21E02B04A0024AB95 /* DateAndTime */,
+				F1D5760B1E0149FF00AC10DE /* Battery Info */,
+			);
+			name = ReadActions;
+			sourceTree = "<group>";
+		};
+		F1D5760B1E0149FF00AC10DE /* Battery Info */ = {
+			isa = PBXGroup;
+			children = (
+				F1D576081E0149FC00AC10DE /* RABatteryLevelNormalized.h */,
+				F1D576091E0149FC00AC10DE /* RABatteryLevelNormalized.m */,
+				F1B9F5E51E02AAE90024AB95 /* RABatteryLevelPercentage.h */,
+				F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */,
+				F1D5760C1E014A7700AC10DE /* RABatteryStatus.h */,
+				F1D5760D1E014A7700AC10DE /* RABatteryStatus.m */,
+				F1D5760F1E014ABD00AC10DE /* RADeviceOrientation.h */,
+				F1D576101E014ABD00AC10DE /* RADeviceOrientation.m */,
+			);
+			name = "Battery Info";
+			sourceTree = "<group>";
+		};
+		F1D5761E1E015C2200AC10DE /* Value */ = {
+			isa = PBXGroup;
+			children = (
+				F1D576181E015BF900AC10DE /* Value.h */,
+				F1D576191E015BF900AC10DE /* Value.m */,
+				F1D5761B1E015C1E00AC10DE /* NumberValue.h */,
+				F1D5761C1E015C1E00AC10DE /* NumberValue.m */,
+				F1D5761F1E015D9900AC10DE /* StringValue.h */,
+				F1D576201E015D9900AC10DE /* StringValue.m */,
+			);
+			name = Value;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1D575D41E0145F900AC10DE /* TriggersV3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1D575EC1E0145F900AC10DE /* Build configuration list for PBXNativeTarget "TriggersV3" */;
+			buildPhases = (
+				F1D575D11E0145F900AC10DE /* Sources */,
+				F1D575D21E0145F900AC10DE /* Frameworks */,
+				F1D575D31E0145F900AC10DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TriggersV3;
+			productName = TriggersV3;
+			productReference = F1D575D51E0145F900AC10DE /* TriggersV3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1D575CD1E0145F900AC10DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Diego;
+				TargetAttributes = {
+					F1D575D41E0145F900AC10DE = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TEAF832HEC;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F1D575D01E0145F900AC10DE /* Build configuration list for PBXProject "TriggersV3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1D575CC1E0145F900AC10DE;
+			productRefGroup = F1D575D61E0145F900AC10DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1D575D41E0145F900AC10DE /* TriggersV3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1D575D31E0145F900AC10DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B9F6081E0815730024AB95 /* DefaultView.xib in Resources */,
+				F1D575E81E0145F900AC10DE /* LaunchScreen.storyboard in Resources */,
+				F1B9F60E1E0818E80024AB95 /* CurrentDeviceLocationView.xib in Resources */,
+				F1D575E51E0145F900AC10DE /* Assets.xcassets in Resources */,
+				F1D575E31E0145F900AC10DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1D575D11E0145F900AC10DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1D575FC1E01462000AC10DE /* ClassAttribute.m in Sources */,
+				F1D575FF1E01462000AC10DE /* ReadAction.m in Sources */,
+				F1D5761D1E015C1E00AC10DE /* NumberValue.m in Sources */,
+				F1B9F60C1E0818DE0024AB95 /* CurrentDeviceLocationView.m in Sources */,
+				F1D575E01E0145F900AC10DE /* ViewController.m in Sources */,
+				F1D576171E015AB000AC10DE /* RACurrentDeviceLocation.m in Sources */,
+				F1B9F5FC1E03EB560024AB95 /* WARest.m in Sources */,
+				F1D576111E014ABD00AC10DE /* RADeviceOrientation.m in Sources */,
+				F1D575FB1E01462000AC10DE /* Action.m in Sources */,
+				F1D5760E1E014A7700AC10DE /* RABatteryStatus.m in Sources */,
+				F1D576141E014F3000AC10DE /* LocationManager.m in Sources */,
+				F1B9F6021E0409500024AB95 /* WAUpdateObjectAttribute.m in Sources */,
+				F1B9F5E71E02AAE90024AB95 /* RABatteryLevelPercentage.m in Sources */,
+				F1D576041E0149DA00AC10DE /* RADevice.m in Sources */,
+				F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */,
+				F1D5760A1E0149FC00AC10DE /* RABatteryLevelNormalized.m in Sources */,
+				F1D5761A1E015BF900AC10DE /* Value.m in Sources */,
+				F1D575DD1E0145F900AC10DE /* AppDelegate.m in Sources */,
+				F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */,
+				F1D575DA1E0145F900AC10DE /* main.m in Sources */,
+				F1B9F5F61E02B0810024AB95 /* WAConsole.m in Sources */,
+				F1B9F5F91E02D26A0024AB95 /* WAVisualAlert.m in Sources */,
+				F1D576001E01462000AC10DE /* Trigger.m in Sources */,
+				F1D576211E015D9900AC10DE /* StringValue.m in Sources */,
+				F1B9F5F11E02B0340024AB95 /* WADevice.m in Sources */,
+				F1D576071E0149E600AC10DE /* RARest.m in Sources */,
+				F1D575FD1E01462000AC10DE /* Condition.m in Sources */,
+				F1B9F5FF1E04051E0024AB95 /* RAObject.m in Sources */,
+				F1D575FE1E01462000AC10DE /* Object.m in Sources */,
+				F1B9F6061E0815660024AB95 /* DefaultView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F1D575E11E0145F900AC10DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1D575E21E0145F900AC10DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F1D575E61E0145F900AC10DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1D575E71E0145F900AC10DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1D575EA1E0145F900AC10DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1D575EB1E0145F900AC10DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1D575ED1E0145F900AC10DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TEAF832HEC;
+				INFOPLIST_FILE = TriggersV3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rievo.TriggersV3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F1D575EE1E0145F900AC10DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TEAF832HEC;
+				INFOPLIST_FILE = TriggersV3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rievo.TriggersV3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1D575D01E0145F900AC10DE /* Build configuration list for PBXProject "TriggersV3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1D575EA1E0145F900AC10DE /* Debug */,
+				F1D575EB1E0145F900AC10DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1D575EC1E0145F900AC10DE /* Build configuration list for PBXNativeTarget "TriggersV3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1D575ED1E0145F900AC10DE /* Debug */,
+				F1D575EE1E0145F900AC10DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1D575CD1E0145F900AC10DE /* Project object */;
+}
