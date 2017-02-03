@@ -10,4 +10,6 @@
 
 @implementation WADevice
 
+//TODO: NO METHODS????
+
 @end

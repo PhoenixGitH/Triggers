@@ -26,8 +26,10 @@
     UIDevice *myDevice = [UIDevice currentDevice];
     [myDevice setBatteryMonitoringEnabled:YES];
     
+    // Format battery for only two digits.
     double batLeft = (float)[myDevice batteryLevel];
-    return [NSNumber numberWithDouble:batLeft];
+    NSString* formattedNumber = [NSString stringWithFormat:@"%.02f", batLeft];
+    return [NSNumber numberWithDouble:atof([formattedNumber UTF8String])];
 }
 
 

@@ -10,4 +10,5 @@
 
 @interface RADevice : ReadAction
 
+
 @end

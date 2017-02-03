@@ -64,10 +64,15 @@
     id l = [_leftPart getValue]; //It could be either an action or a value
     id r = [_rightPart getValue];
     
+    NSLog(@"Equals: %@ = %@",l,r);
     
+    // Should fix this too?
     if([l isKindOfClass:[NSNumber class]] && [l class] == [r class]){ //Both numbers
         return [self compareAsNumbersLeft:l andRight:r];
-    }else if([l isKindOfClass:[NSString class]] && [l class] == [r class]){ //Both strings
+    /* This don´t work if the String superclasses are distinct.
+     }else if([l isKindOfClass:[NSString class]] && [l class] == [r class]){ //Both strings
+        return [self compareAsStringsLeft:l andRight:r];*/
+    }else if([l isKindOfClass:[NSString class]] && [r isKindOfClass:[NSString class]]){ //Both strings
         return [self compareAsStringsLeft:l andRight:r];
     }else{ //Incompatible types
         

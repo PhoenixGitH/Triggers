@@ -19,6 +19,7 @@
     NSInteger seconds = [components second];
     
     
+    
     return [NSNumber numberWithInteger:seconds];
 }
 

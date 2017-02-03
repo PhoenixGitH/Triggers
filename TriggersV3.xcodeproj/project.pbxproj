@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */; };
+		425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286151E448C020058F2EF /* RAGetCurrentHour.m */; };
+		425286191E449F530058F2EF /* RAGetCurrentDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286181E449F530058F2EF /* RAGetCurrentDate.m */; };
 		F1B9F5E71E02AAE90024AB95 /* RABatteryLevelPercentage.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */; };
 		F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */; };
 		F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5EC1E02B0040024AB95 /* WriteAction.m */; };
@@ -46,6 +49,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		425286111E4488E20058F2EF /* RAGetCurrentMinutes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentMinutes.h; sourceTree = "<group>"; };
+		425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentMinutes.m; sourceTree = "<group>"; };
+		425286141E448BA60058F2EF /* RAGetCurrentHour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentHour.h; sourceTree = "<group>"; };
+		425286151E448C020058F2EF /* RAGetCurrentHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentHour.m; sourceTree = "<group>"; };
+		425286171E449ED70058F2EF /* RAGetCurrentDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentDate.h; sourceTree = "<group>"; };
+		425286181E449F530058F2EF /* RAGetCurrentDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentDate.m; sourceTree = "<group>"; };
 		F1B9F5E51E02AAE90024AB95 /* RABatteryLevelPercentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatteryLevelPercentage.h; sourceTree = "<group>"; };
 		F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatteryLevelPercentage.m; sourceTree = "<group>"; };
 		F1B9F5E81E02AD060024AB95 /* RAGetCurrentSeconds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentSeconds.h; sourceTree = "<group>"; };
@@ -151,6 +160,12 @@
 			children = (
 				F1B9F5E81E02AD060024AB95 /* RAGetCurrentSeconds.h */,
 				F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */,
+				425286111E4488E20058F2EF /* RAGetCurrentMinutes.h */,
+				425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */,
+				425286141E448BA60058F2EF /* RAGetCurrentHour.h */,
+				425286151E448C020058F2EF /* RAGetCurrentHour.m */,
+				425286171E449ED70058F2EF /* RAGetCurrentDate.h */,
+				425286181E449F530058F2EF /* RAGetCurrentDate.m */,
 			);
 			name = DateAndTime;
 			sourceTree = "<group>";
@@ -371,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1D575FC1E01462000AC10DE /* ClassAttribute.m in Sources */,
+				425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */,
 				F1D575FF1E01462000AC10DE /* ReadAction.m in Sources */,
 				F1D5761D1E015C1E00AC10DE /* NumberValue.m in Sources */,
 				F1B9F60C1E0818DE0024AB95 /* CurrentDeviceLocationView.m in Sources */,
@@ -391,8 +407,10 @@
 				F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */,
 				F1D575DA1E0145F900AC10DE /* main.m in Sources */,
 				F1B9F5F61E02B0810024AB95 /* WAConsole.m in Sources */,
+				425286191E449F530058F2EF /* RAGetCurrentDate.m in Sources */,
 				F1B9F5F91E02D26A0024AB95 /* WAVisualAlert.m in Sources */,
 				F1D576001E01462000AC10DE /* Trigger.m in Sources */,
+				425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */,
 				F1D576211E015D9900AC10DE /* StringValue.m in Sources */,
 				F1B9F5F11E02B0340024AB95 /* WADevice.m in Sources */,
 				F1D576071E0149E600AC10DE /* RARest.m in Sources */,

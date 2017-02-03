@@ -20,7 +20,11 @@
 #import "StringValue.h"
 #import "RABatteryLevelNormalized.h"
 #import "RABatteryLevelPercentage.h"
+#import "RABatteryStatus.h"
 #import "RAGetCurrentSeconds.h"
+#import "RAGetCurrentMinutes.h"
+#import "RAGetCurrentDate.h"
+#import "RAGetCurrentHour.h"
 #import "WAConsole.h"
 #import "RADeviceOrientation.h"
 #import "WAVisualAlert.h"
@@ -50,8 +54,11 @@
     [self testThings];
 }
 
+
 -(void)testThings{
     
+    // Extract the weather time via API.
+    // Instead of using a name I would use coordinates.
     RARest * rar = [[RARest alloc] init];
     rar.baseURL = @"http://api.openweathermap.org/data/2.5/weather?";
     [rar addParamWithKey:@"q" andValue:@"Madrid"];
@@ -66,19 +73,18 @@
     id result = [rar getValue];
     
     
-    
     RACurrentDeviceLocation * racdl = [[RACurrentDeviceLocation alloc] init];
     CurrentDeviceLocationView * cdv = (CurrentDeviceLocationView *) [racdl getCreatingView];
     
     int r = 2;
     
-/*
+
     
     Condition * cond = [[Condition alloc] init];
     
     //Object to test
     
-    Object * testObj = [[Object alloc] init];
+    /*Object * testObj = [[Object alloc] init];
     
     ClassAttribute * ca1 = [[ClassAttribute alloc] init];
     ca1.name = @"name";
@@ -88,13 +94,13 @@
     ClassAttribute * ca2 = [[ClassAttribute alloc] init];
     ca2.name = @"age";
     ca2.currentValue = [NSNumber numberWithInt:23];
-    [testObj.attributes addObject:ca2];
+    [testObj.attributes addObject:ca2];*/
 
     
     
     //Create a temp trigger
     Trigger * secTrigger = [[Trigger alloc] init];
-    secTrigger.identifier = @"Checking seconds";
+    secTrigger.identifier = @"Checking hour";
     
     
     //--------- SHOULD EXECUTE ONLY ONCE? ---------
@@ -105,24 +111,60 @@
     
     /*RAObject * rao = [[RAObject alloc] init];
     rao.obj = testObj;
-    rao.nameOfAttributeToCheck = @"age";
+    rao.nameOfAttributeToCheck = (NSString *) @"name";
     cond.leftPart = rao;*/
     
     
     /*RAGetCurrentSeconds * gcs = [[RAGetCurrentSeconds alloc] init];
     cond.leftPart = gcs;*/
     
+    //Trying new minute getter. WORKING
+    /*RAGetCurrentMinutes * gcm = [[RAGetCurrentMinutes alloc] init];
+    cond.leftPart = gcm;*/
     
-   /* RADeviceOrientation * rado = [[RADeviceOrientation alloc] init];
-    cond.leftPart = rado;
+    //Trying new hour getter. WORKING
+    /*RAGetCurrentHour * gch = [[RAGetCurrentHour alloc] init];
+    cond.leftPart = gch;*/
+    
+    // Trying new Date getter. Working.
+    /*RAGetCurrentDate *gcd = [[RAGetCurrentDate alloc] init];
+    cond.leftPart = gcd;*/
+    
+    // Working, only on real devices.
+    /*RABatteryLevelPercentage *gcbp = [[RABatteryLevelPercentage alloc] init];
+    cond.leftPart = gcbp;*/
+    
+    // Working
+    /*RABatteryLevelNormalized *gcbn = [[RABatteryLevelNormalized alloc] init];
+    cond.leftPart = gcbn;*/
+    
+    // Working too.
+    RABatteryStatus *gcbs = [[RABatteryStatus alloc] init];
+    cond.leftPart = gcbs;
+    
+    
+   /*RADeviceOrientation * rado = [[RADeviceOrientation alloc] init];
+    cond.leftPart = rado;*/
     
     
     
     
     //--------- RIGHT PART ---------
 
+    // For float.
+    /*NumberValue * rval = [[NumberValue alloc] init];
+    rval.value = [NSNumber numberWithFloat: 0.92f];*/
+    
     NumberValue * rval = [[NumberValue alloc] init];
-    rval.value = [NSNumber numberWithInt:6];
+    rval.value = [NSNumber numberWithInteger:2];
+    
+    /*StringValue * string = [[StringValue alloc] init];
+    string.value = @"pepe";*/
+    
+    //Testing date
+    /*StringValue *date = [[StringValue alloc] init];
+    date.value = @"03/02/2017 13:06:40";*/
+    
     cond.rightPart = rval;
     
     
@@ -137,25 +179,25 @@
     
     //--------- ACTION TO EXECUTE ---------
     
-    WAConsole * wtc = [[WAConsole alloc] init];
+    /*WAConsole * wtc = [[WAConsole alloc] init];
     wtc.textToPrint = @"OK";
-    [secTrigger.actions addObject:wtc];
+    [secTrigger.actions addObject:wtc];*/
     
-    /*
+    
     WAVisualAlert * wava = [[WAVisualAlert alloc] init];
     wava.title = @"Info";
-    wava.content = @"Phone is looking down";
-    [secTrigger.actions addObject:wava];*/
+    wava.content = @"The date is MM/DD/AAAA HH:mm:ss";
+    [secTrigger.actions addObject:wava];
     
     
     /*WARest * war = [[WARest alloc] init];
-    war.baseURL = @"ht tps://diagrameditorserver.herokuapp.com/player/true";
+    war.baseURL = @"https://diagrameditorserver.herokuapp.com/player/true";
     [secTrigger.actions addObject:war];*/
     
     
     
     //--------- ADD THIS TRIGGER TO THE ARRAY ---------
-    //[dele.triggersArray addObject:secTrigger];
+    [dele.triggersArray addObject:secTrigger];
     
     
 }

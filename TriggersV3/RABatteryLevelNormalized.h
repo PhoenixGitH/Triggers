@@ -11,7 +11,4 @@
 @interface RABatteryLevelNormalized : RADevice
 
 
-
-
-
 @end
