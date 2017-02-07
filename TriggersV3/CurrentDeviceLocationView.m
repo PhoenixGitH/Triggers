@@ -8,6 +8,11 @@
 
 #import "CurrentDeviceLocationView.h"
 
-@implementation CurrentDeviceLocationView
+@implementation CurrentDeviceLocationView : UIView
+
+// Locate the position of the user in the UIMap.
+- (void) locateUser{
+    _map.userTrackingMode = YES;
+}
 
 @end

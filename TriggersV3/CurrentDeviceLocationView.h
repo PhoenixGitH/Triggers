@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 
+-(void) locateUser;
+
 @end

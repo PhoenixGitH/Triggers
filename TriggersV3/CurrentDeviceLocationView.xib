@@ -46,7 +46,7 @@
                 <outlet property="map" destination="o76-uo-AAr" id="Az2-9z-hpt"/>
                 <outlet property="titleLabel" destination="9CO-gu-2x5" id="dMY-ax-6kN"/>
             </connections>
-            <point key="canvasLocation" x="-6" y="-203.5"/>
+            <point key="canvasLocation" x="-46" y="-228"/>
         </view>
     </objects>
 </document>

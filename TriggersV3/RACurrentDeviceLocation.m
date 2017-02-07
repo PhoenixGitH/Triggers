@@ -29,8 +29,41 @@
 -(id)getValue{
     
     AppDelegate * dele = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    float latitude = dele.manager.manager.location.coordinate.latitude;
+    float longitude = dele.manager.manager.location.coordinate.longitude;
     
-    return dele.manager.manager.location;
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    __block NSString *countryCode;
+    __block dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [geocoder reverseGeocodeLocation:dele.manager.manager.location
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
+                       
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                           
+                       }
+                       
+                       
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       
+                       NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
+                       countryCode = placemark.ISOcountryCode;
+                       NSLog(@"placemark.country %@",placemark.country);
+                       NSLog(@"placemark.postalCode %@",placemark.postalCode);
+                       NSLog(@"placemark.administrativeArea %@",placemark.administrativeArea);
+                       NSLog(@"placemark.locality %@",placemark.locality);
+                       NSLog(@"placemark.subLocality %@",placemark.subLocality);
+                       NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
+                       dispatch_semaphore_signal(semaphore);
+                       
+                   }];
+    });
+        
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return [NSString stringWithFormat: @"%f,%f", latitude,longitude];
 
 }
 

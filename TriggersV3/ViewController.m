@@ -49,7 +49,6 @@
     dele.manager = [[LocationManager alloc]init];
     
     
-    
     //Test things
     [self testThings];
 }
@@ -57,26 +56,30 @@
 
 -(void)testThings{
     
-    // Extract the weather time via API.
+    /*// Extract the weather time via API.
     // Instead of using a name I would use coordinates.
     RARest * rar = [[RARest alloc] init];
     rar.baseURL = @"http://api.openweathermap.org/data/2.5/weather?";
     [rar addParamWithKey:@"q" andValue:@"Madrid"];
     [rar addParamWithKey:@"APPID" andValue:@"6faefe9c835124150d6f782947a4c722"];
     
+    // Search for key inside de JSON
     [rar addKeyToOrder:@"weather"];
+    // Search again, after the one up.
     [rar addKeyToOrder:@"description"];
     
     
     DefaultView * dv = (DefaultView *)[rar getCreatingView];
     
-    id result = [rar getValue];
+    id result = [rar getValue];*/
     
-    
+    //Trying current Location.
     RACurrentDeviceLocation * racdl = [[RACurrentDeviceLocation alloc] init];
     CurrentDeviceLocationView * cdv = (CurrentDeviceLocationView *) [racdl getCreatingView];
+    [cdv locateUser];
+    self.view = cdv;
     
-    int r = 2;
+    //int r = 2;
     
 
     
@@ -93,25 +96,25 @@
     
     ClassAttribute * ca2 = [[ClassAttribute alloc] init];
     ca2.name = @"age";
-    ca2.currentValue = [NSNumber numberWithInt:23];
+    ca2.currentValue = [NSNumber numberWithInt:2];
     [testObj.attributes addObject:ca2];*/
 
     
     
     //Create a temp trigger
     Trigger * secTrigger = [[Trigger alloc] init];
-    secTrigger.identifier = @"Checking hour";
+    secTrigger.identifier = @"Checking weather description";
     
     
     //--------- SHOULD EXECUTE ONLY ONCE? ---------
-    secTrigger.uniqueFire = NO;
+    secTrigger.uniqueFire = YES;
     
     
     //--------- LEFT PART ---------
     
     /*RAObject * rao = [[RAObject alloc] init];
     rao.obj = testObj;
-    rao.nameOfAttributeToCheck = (NSString *) @"name";
+    rao.nameOfAttributeToCheck = (NSString *) @"age";
     cond.leftPart = rao;*/
     
     
@@ -139,14 +142,15 @@
     cond.leftPart = gcbn;*/
     
     // Working too.
-    RABatteryStatus *gcbs = [[RABatteryStatus alloc] init];
-    cond.leftPart = gcbs;
+    /*RABatteryStatus *gcbs = [[RABatteryStatus alloc] init];
+    cond.leftPart = gcbs;*/
     
-    
+    //Trying orientation. Working.
    /*RADeviceOrientation * rado = [[RADeviceOrientation alloc] init];
     cond.leftPart = rado;*/
     
     
+    cond.leftPart = racdl;
     
     
     //--------- RIGHT PART ---------
@@ -155,8 +159,9 @@
     /*NumberValue * rval = [[NumberValue alloc] init];
     rval.value = [NSNumber numberWithFloat: 0.92f];*/
     
-    NumberValue * rval = [[NumberValue alloc] init];
-    rval.value = [NSNumber numberWithInteger:2];
+    // To Check numbers.
+    /*NumberValue * rval = [[NumberValue alloc] init];
+    rval.value = [NSNumber numberWithInteger:2];*/
     
     /*StringValue * string = [[StringValue alloc] init];
     string.value = @"pepe";*/
@@ -165,7 +170,19 @@
     /*StringValue *date = [[StringValue alloc] init];
     date.value = @"03/02/2017 13:06:40";*/
     
-    cond.rightPart = rval;
+    //Testing Weather description. Working.
+    /*StringValue *weather = [[StringValue alloc] init];
+    weather.value = @"few clouds";*/
+    
+    //cond.rightPart = weather;
+    
+    //Testing coordinates comparition. Working
+    /*StringValue *location = [[StringValue alloc] init];
+    location.value = @"10.9,4.5";
+    
+    cond.rightPart = location;*/
+    
+    cond.rightPart = racdl;
     
     
     //--------- SET THE CONDITION OPERATOR ---------
@@ -179,6 +196,8 @@
     
     //--------- ACTION TO EXECUTE ---------
     
+    
+    // Trying multi actions. WORKING
     /*WAConsole * wtc = [[WAConsole alloc] init];
     wtc.textToPrint = @"OK";
     [secTrigger.actions addObject:wtc];*/
@@ -186,7 +205,7 @@
     
     WAVisualAlert * wava = [[WAVisualAlert alloc] init];
     wava.title = @"Info";
-    wava.content = @"The date is MM/DD/AAAA HH:mm:ss";
+    wava.content = @"You at a certain location";
     [secTrigger.actions addObject:wava];
     
     
