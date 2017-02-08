@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423FA6F71E4B315200104BFB /* RADeviceName.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6F61E4B315200104BFB /* RADeviceName.m */; };
+		423FA6FB1E4B391400104BFB /* RAOperativeSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6FA1E4B391400104BFB /* RAOperativeSystem.m */; };
+		423FA6FE1E4B3A9100104BFB /* RAOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6FD1E4B3A9100104BFB /* RAOSVersion.m */; };
+		423FA7011E4B3E3300104BFB /* RADeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7001E4B3E3300104BFB /* RADeviceModel.m */; };
+		423FA7041E4B3EEC00104BFB /* RADeviceID.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7031E4B3EEC00104BFB /* RADeviceID.m */; };
 		425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */; };
 		425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286151E448C020058F2EF /* RAGetCurrentHour.m */; };
 		425286191E449F530058F2EF /* RAGetCurrentDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286181E449F530058F2EF /* RAGetCurrentDate.m */; };
@@ -49,6 +54,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		423FA6F51E4B310500104BFB /* RADeviceName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADeviceName.h; sourceTree = "<group>"; };
+		423FA6F61E4B315200104BFB /* RADeviceName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceName.m; sourceTree = "<group>"; };
+		423FA6F91E4B386200104BFB /* RAOperativeSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAOperativeSystem.h; sourceTree = "<group>"; };
+		423FA6FA1E4B391400104BFB /* RAOperativeSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAOperativeSystem.m; sourceTree = "<group>"; };
+		423FA6FC1E4B3A4A00104BFB /* RAOSVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAOSVersion.h; sourceTree = "<group>"; };
+		423FA6FD1E4B3A9100104BFB /* RAOSVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAOSVersion.m; sourceTree = "<group>"; };
+		423FA6FF1E4B3E0000104BFB /* RADeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADeviceModel.h; sourceTree = "<group>"; };
+		423FA7001E4B3E3300104BFB /* RADeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceModel.m; sourceTree = "<group>"; };
+		423FA7021E4B3EC400104BFB /* RADeviceID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADeviceID.h; sourceTree = "<group>"; };
+		423FA7031E4B3EEC00104BFB /* RADeviceID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceID.m; sourceTree = "<group>"; };
 		425286111E4488E20058F2EF /* RAGetCurrentMinutes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentMinutes.h; sourceTree = "<group>"; };
 		425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentMinutes.m; sourceTree = "<group>"; };
 		425286141E448BA60058F2EF /* RAGetCurrentHour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentHour.h; sourceTree = "<group>"; };
@@ -136,6 +151,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		423FA6F81E4B380700104BFB /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F1D5760B1E0149FF00AC10DE /* Battery Info */,
+				F1D5760F1E014ABD00AC10DE /* RADeviceOrientation.h */,
+				F1D576101E014ABD00AC10DE /* RADeviceOrientation.m */,
+				423FA6F51E4B310500104BFB /* RADeviceName.h */,
+				423FA6F61E4B315200104BFB /* RADeviceName.m */,
+				423FA6F91E4B386200104BFB /* RAOperativeSystem.h */,
+				423FA6FA1E4B391400104BFB /* RAOperativeSystem.m */,
+				423FA6FC1E4B3A4A00104BFB /* RAOSVersion.h */,
+				423FA6FD1E4B3A9100104BFB /* RAOSVersion.m */,
+				423FA6FF1E4B3E0000104BFB /* RADeviceModel.h */,
+				423FA7001E4B3E3300104BFB /* RADeviceModel.m */,
+				423FA7021E4B3EC400104BFB /* RADeviceID.h */,
+				423FA7031E4B3EEC00104BFB /* RADeviceID.m */,
+			);
+			name = DeviceInfo;
+			sourceTree = "<group>";
+		};
 		F1B9F5EE1E02B00D0024AB95 /* WriteActions */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,7 +313,7 @@
 				F1B9F5FE1E04051E0024AB95 /* RAObject.m */,
 				F1B9F5F31E02B0560024AB95 /* Location */,
 				F1B9F5F21E02B04A0024AB95 /* DateAndTime */,
-				F1D5760B1E0149FF00AC10DE /* Battery Info */,
+				423FA6F81E4B380700104BFB /* DeviceInfo */,
 			);
 			name = ReadActions;
 			sourceTree = "<group>";
@@ -292,8 +327,6 @@
 				F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */,
 				F1D5760C1E014A7700AC10DE /* RABatteryStatus.h */,
 				F1D5760D1E014A7700AC10DE /* RABatteryStatus.m */,
-				F1D5760F1E014ABD00AC10DE /* RADeviceOrientation.h */,
-				F1D576101E014ABD00AC10DE /* RADeviceOrientation.m */,
 			);
 			name = "Battery Info";
 			sourceTree = "<group>";
@@ -387,10 +420,13 @@
 			files = (
 				F1D575FC1E01462000AC10DE /* ClassAttribute.m in Sources */,
 				425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */,
+				423FA7011E4B3E3300104BFB /* RADeviceModel.m in Sources */,
 				F1D575FF1E01462000AC10DE /* ReadAction.m in Sources */,
 				F1D5761D1E015C1E00AC10DE /* NumberValue.m in Sources */,
 				F1B9F60C1E0818DE0024AB95 /* CurrentDeviceLocationView.m in Sources */,
+				423FA6F71E4B315200104BFB /* RADeviceName.m in Sources */,
 				F1D575E01E0145F900AC10DE /* ViewController.m in Sources */,
+				423FA6FE1E4B3A9100104BFB /* RAOSVersion.m in Sources */,
 				F1D576171E015AB000AC10DE /* RACurrentDeviceLocation.m in Sources */,
 				F1B9F5FC1E03EB560024AB95 /* WARest.m in Sources */,
 				F1D576111E014ABD00AC10DE /* RADeviceOrientation.m in Sources */,
@@ -402,8 +438,10 @@
 				F1D576041E0149DA00AC10DE /* RADevice.m in Sources */,
 				F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */,
 				F1D5760A1E0149FC00AC10DE /* RABatteryLevelNormalized.m in Sources */,
+				423FA6FB1E4B391400104BFB /* RAOperativeSystem.m in Sources */,
 				F1D5761A1E015BF900AC10DE /* Value.m in Sources */,
 				F1D575DD1E0145F900AC10DE /* AppDelegate.m in Sources */,
+				423FA7041E4B3EEC00104BFB /* RADeviceID.m in Sources */,
 				F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */,
 				F1D575DA1E0145F900AC10DE /* main.m in Sources */,
 				F1B9F5F61E02B0810024AB95 /* WAConsole.m in Sources */,

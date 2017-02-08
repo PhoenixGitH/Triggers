@@ -25,6 +25,11 @@
 #import "RAGetCurrentMinutes.h"
 #import "RAGetCurrentDate.h"
 #import "RAGetCurrentHour.h"
+#import "RADeviceName.h"
+#import "RAOperativeSystem.h"
+#import "RAOSVersion.h"
+#import "RADeviceModel.h"
+#import "RADeviceID.h"
 #import "WAConsole.h"
 #import "RADeviceOrientation.h"
 #import "WAVisualAlert.h"
@@ -33,6 +38,7 @@
 #import "RAObject.h"
 #import "RARest.h"
 #import "DefaultView.h"
+#import "Reachability.h"
 
 
 @interface ViewController ()
@@ -103,7 +109,7 @@
     
     //Create a temp trigger
     Trigger * secTrigger = [[Trigger alloc] init];
-    secTrigger.identifier = @"Checking weather description";
+    secTrigger.identifier = @"Checking device name";
     
     
     //--------- SHOULD EXECUTE ONLY ONCE? ---------
@@ -145,12 +151,27 @@
     /*RABatteryStatus *gcbs = [[RABatteryStatus alloc] init];
     cond.leftPart = gcbs;*/
     
-    //Trying orientation. Working.
-   /*RADeviceOrientation * rado = [[RADeviceOrientation alloc] init];
-    cond.leftPart = rado;*/
+    //trying devices. WORKING
+    /*RADeviceName *rdn = [[RADeviceName alloc] init];
+    cond.leftPart = rdn;
+     
+     //Trying orientation. Working.
+     RADeviceOrientation * rado = [[RADeviceOrientation alloc] init];
+     cond.leftPart = rado;
+     
+     RADeviceID *rdid = [[RADeviceID alloc] init];
+     cond.leftPart = rdid;
     
+    RADeviceModel *rdm = [[RADeviceModel alloc] init];
+    cond.leftPart = rdm;
     
-    cond.leftPart = racdl;
+    RAOSVersion *rdv = [[RAOSVersion alloc] init];
+    cond.leftPart = rdv;
+    
+    RAOperativeSystem *rdon = [[RAOperativeSystem alloc] init];
+    cond.leftPart = rdon;*/
+    
+     //End devices type.
     
     
     //--------- RIGHT PART ---------
@@ -182,7 +203,29 @@
     
     cond.rightPart = location;*/
     
-    cond.rightPart = racdl;
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    
+    NetworkStatus status = [reachability currentReachabilityStatus];
+    
+    if(status == NotReachable)
+    {
+        //No internet
+    }
+    else if (status == ReachableViaWiFi)
+    {
+        //WiFi
+    }
+    else if (status == ReachableViaWWAN)
+    {
+        //3G
+    }
+    
+    //Testing device things. WORKING!
+    StringValue *name = [[StringValue alloc] init];
+    name.value = @"iOS";
+    
+    cond.rightPart = name;
     
     
     //--------- SET THE CONDITION OPERATOR ---------
@@ -205,7 +248,7 @@
     
     WAVisualAlert * wava = [[WAVisualAlert alloc] init];
     wava.title = @"Info";
-    wava.content = @"You at a certain location";
+    wava.content = @"Your name is iPhone7";
     [secTrigger.actions addObject:wava];
     
     

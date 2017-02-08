@@ -11,4 +11,6 @@
 
 @interface RACurrentDeviceLocation : RADevice
 
+
+
 @end

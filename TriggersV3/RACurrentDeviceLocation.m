@@ -32,11 +32,13 @@
     float latitude = dele.manager.manager.location.coordinate.latitude;
     float longitude = dele.manager.manager.location.coordinate.longitude;
     
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
-    __block NSString *countryCode;
-    __block dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [geocoder reverseGeocodeLocation:dele.manager.manager.location
+    //CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    //__block NSString *countryCode;
+    
+    
+    //__block dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    //dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        /*[geocoder reverseGeocodeLocation:dele.manager.manager.location
                    completionHandler:^(NSArray *placemarks, NSError *error) {
                        NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
                        
@@ -57,12 +59,13 @@
                        NSLog(@"placemark.locality %@",placemark.locality);
                        NSLog(@"placemark.subLocality %@",placemark.subLocality);
                        NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
-                       dispatch_semaphore_signal(semaphore);
+                       //dispatch_semaphore_signal(semaphore);
                        
-                   }];
-    });
+                   }];*/
         
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    //});
+        
+    //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     return [NSString stringWithFormat: @"%f,%f", latitude,longitude];
 
 }
