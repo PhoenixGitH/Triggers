@@ -32,13 +32,13 @@
 #import "RADeviceID.h"
 #import "WAConsole.h"
 #import "RADeviceOrientation.h"
+#import "RANetStatus.h"
 #import "WAVisualAlert.h"
 #import "WARest.h"
 #import "Object.h"
 #import "RAObject.h"
 #import "RARest.h"
 #import "DefaultView.h"
-#import "Reachability.h"
 
 
 @interface ViewController ()
@@ -173,6 +173,10 @@
     
      //End devices type.
     
+    //testing net status.
+    RANetStatus *net = [[RANetStatus alloc] init];
+    cond.leftPart = net;
+    
     
     //--------- RIGHT PART ---------
 
@@ -203,29 +207,14 @@
     
     cond.rightPart = location;*/
     
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    [reachability startNotifier];
-    
-    NetworkStatus status = [reachability currentReachabilityStatus];
-    
-    if(status == NotReachable)
-    {
-        //No internet
-    }
-    else if (status == ReachableViaWiFi)
-    {
-        //WiFi
-    }
-    else if (status == ReachableViaWWAN)
-    {
-        //3G
-    }
     
     //Testing device things. WORKING!
-    StringValue *name = [[StringValue alloc] init];
-    name.value = @"iOS";
+    /*StringValue *name = [[StringValue alloc] init];
+    name.value = @"iOS";*/
     
-    cond.rightPart = name;
+    StringValue *state = [[StringValue alloc] init];
+    state.value = @"Wifi";
+    cond.rightPart = state;
     
     
     //--------- SET THE CONDITION OPERATOR ---------
@@ -248,7 +237,7 @@
     
     WAVisualAlert * wava = [[WAVisualAlert alloc] init];
     wava.title = @"Info";
-    wava.content = @"Your name is iPhone7";
+    wava.content = @"You are wifi connected";
     [secTrigger.actions addObject:wava];
     
     

@@ -12,6 +12,8 @@
 		423FA6FE1E4B3A9100104BFB /* RAOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6FD1E4B3A9100104BFB /* RAOSVersion.m */; };
 		423FA7011E4B3E3300104BFB /* RADeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7001E4B3E3300104BFB /* RADeviceModel.m */; };
 		423FA7041E4B3EEC00104BFB /* RADeviceID.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7031E4B3EEC00104BFB /* RADeviceID.m */; };
+		42516D9D1E4C56E100011E6A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 42516D9C1E4C56E100011E6A /* Reachability.m */; };
+		42516DA01E4C5CCB00011E6A /* RANetStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 42516D9F1E4C5CCB00011E6A /* RANetStatus.m */; };
 		425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */; };
 		425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286151E448C020058F2EF /* RAGetCurrentHour.m */; };
 		425286191E449F530058F2EF /* RAGetCurrentDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286181E449F530058F2EF /* RAGetCurrentDate.m */; };
@@ -64,6 +66,10 @@
 		423FA7001E4B3E3300104BFB /* RADeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceModel.m; sourceTree = "<group>"; };
 		423FA7021E4B3EC400104BFB /* RADeviceID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADeviceID.h; sourceTree = "<group>"; };
 		423FA7031E4B3EEC00104BFB /* RADeviceID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceID.m; sourceTree = "<group>"; };
+		42516D9B1E4C56E100011E6A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../../Downloads/Reachability/Reachability/Reachability.h; sourceTree = "<group>"; };
+		42516D9C1E4C56E100011E6A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../../Downloads/Reachability/Reachability/Reachability.m; sourceTree = "<group>"; };
+		42516D9E1E4C5B7C00011E6A /* RANetStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RANetStatus.h; sourceTree = "<group>"; };
+		42516D9F1E4C5CCB00011E6A /* RANetStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RANetStatus.m; sourceTree = "<group>"; };
 		425286111E4488E20058F2EF /* RAGetCurrentMinutes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentMinutes.h; sourceTree = "<group>"; };
 		425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentMinutes.m; sourceTree = "<group>"; };
 		425286141E448BA60058F2EF /* RAGetCurrentHour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentHour.h; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 		423FA6F81E4B380700104BFB /* DeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
+				42516D9B1E4C56E100011E6A /* Reachability.h */,
+				42516D9C1E4C56E100011E6A /* Reachability.m */,
 				F1D5760B1E0149FF00AC10DE /* Battery Info */,
 				F1D5760F1E014ABD00AC10DE /* RADeviceOrientation.h */,
 				F1D576101E014ABD00AC10DE /* RADeviceOrientation.m */,
@@ -167,6 +175,8 @@
 				423FA7001E4B3E3300104BFB /* RADeviceModel.m */,
 				423FA7021E4B3EC400104BFB /* RADeviceID.h */,
 				423FA7031E4B3EEC00104BFB /* RADeviceID.m */,
+				42516D9E1E4C5B7C00011E6A /* RANetStatus.h */,
+				42516D9F1E4C5CCB00011E6A /* RANetStatus.m */,
 			);
 			name = DeviceInfo;
 			sourceTree = "<group>";
@@ -431,6 +441,8 @@
 				F1B9F5FC1E03EB560024AB95 /* WARest.m in Sources */,
 				F1D576111E014ABD00AC10DE /* RADeviceOrientation.m in Sources */,
 				F1D575FB1E01462000AC10DE /* Action.m in Sources */,
+				42516D9D1E4C56E100011E6A /* Reachability.m in Sources */,
+				42516DA01E4C5CCB00011E6A /* RANetStatus.m in Sources */,
 				F1D5760E1E014A7700AC10DE /* RABatteryStatus.m in Sources */,
 				F1D576141E014F3000AC10DE /* LocationManager.m in Sources */,
 				F1B9F6021E0409500024AB95 /* WAUpdateObjectAttribute.m in Sources */,
@@ -577,6 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TEAF832HEC;
 				INFOPLIST_FILE = TriggersV3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rievo.TriggersV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -589,6 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TEAF832HEC;
 				INFOPLIST_FILE = TriggersV3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rievo.TriggersV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
