@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4209CBE91E4C629A00BABC28 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209CBE81E4C629A00BABC28 /* Reachability.m */; };
 		423FA6F71E4B315200104BFB /* RADeviceName.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6F61E4B315200104BFB /* RADeviceName.m */; };
 		423FA6FB1E4B391400104BFB /* RAOperativeSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6FA1E4B391400104BFB /* RAOperativeSystem.m */; };
 		423FA6FE1E4B3A9100104BFB /* RAOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6FD1E4B3A9100104BFB /* RAOSVersion.m */; };
 		423FA7011E4B3E3300104BFB /* RADeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7001E4B3E3300104BFB /* RADeviceModel.m */; };
 		423FA7041E4B3EEC00104BFB /* RADeviceID.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7031E4B3EEC00104BFB /* RADeviceID.m */; };
-		42516D9D1E4C56E100011E6A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 42516D9C1E4C56E100011E6A /* Reachability.m */; };
 		42516DA01E4C5CCB00011E6A /* RANetStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 42516D9F1E4C5CCB00011E6A /* RANetStatus.m */; };
 		425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */; };
 		425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286151E448C020058F2EF /* RAGetCurrentHour.m */; };
@@ -56,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4209CBE71E4C628200BABC28 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4209CBE81E4C629A00BABC28 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		423FA6F51E4B310500104BFB /* RADeviceName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADeviceName.h; sourceTree = "<group>"; };
 		423FA6F61E4B315200104BFB /* RADeviceName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceName.m; sourceTree = "<group>"; };
 		423FA6F91E4B386200104BFB /* RAOperativeSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAOperativeSystem.h; sourceTree = "<group>"; };
@@ -66,8 +68,6 @@
 		423FA7001E4B3E3300104BFB /* RADeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceModel.m; sourceTree = "<group>"; };
 		423FA7021E4B3EC400104BFB /* RADeviceID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADeviceID.h; sourceTree = "<group>"; };
 		423FA7031E4B3EEC00104BFB /* RADeviceID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceID.m; sourceTree = "<group>"; };
-		42516D9B1E4C56E100011E6A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../../Downloads/Reachability/Reachability/Reachability.h; sourceTree = "<group>"; };
-		42516D9C1E4C56E100011E6A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../../Downloads/Reachability/Reachability/Reachability.m; sourceTree = "<group>"; };
 		42516D9E1E4C5B7C00011E6A /* RANetStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RANetStatus.h; sourceTree = "<group>"; };
 		42516D9F1E4C5CCB00011E6A /* RANetStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RANetStatus.m; sourceTree = "<group>"; };
 		425286111E4488E20058F2EF /* RAGetCurrentMinutes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentMinutes.h; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 		423FA6F81E4B380700104BFB /* DeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
-				42516D9B1E4C56E100011E6A /* Reachability.h */,
-				42516D9C1E4C56E100011E6A /* Reachability.m */,
+				4209CBE81E4C629A00BABC28 /* Reachability.m */,
+				4209CBE71E4C628200BABC28 /* Reachability.h */,
 				F1D5760B1E0149FF00AC10DE /* Battery Info */,
 				F1D5760F1E014ABD00AC10DE /* RADeviceOrientation.h */,
 				F1D576101E014ABD00AC10DE /* RADeviceOrientation.m */,
@@ -441,7 +441,6 @@
 				F1B9F5FC1E03EB560024AB95 /* WARest.m in Sources */,
 				F1D576111E014ABD00AC10DE /* RADeviceOrientation.m in Sources */,
 				F1D575FB1E01462000AC10DE /* Action.m in Sources */,
-				42516D9D1E4C56E100011E6A /* Reachability.m in Sources */,
 				42516DA01E4C5CCB00011E6A /* RANetStatus.m in Sources */,
 				F1D5760E1E014A7700AC10DE /* RABatteryStatus.m in Sources */,
 				F1D576141E014F3000AC10DE /* LocationManager.m in Sources */,
@@ -463,6 +462,7 @@
 				425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */,
 				F1D576211E015D9900AC10DE /* StringValue.m in Sources */,
 				F1B9F5F11E02B0340024AB95 /* WADevice.m in Sources */,
+				4209CBE91E4C629A00BABC28 /* Reachability.m in Sources */,
 				F1D576071E0149E600AC10DE /* RARest.m in Sources */,
 				F1D575FD1E01462000AC10DE /* Condition.m in Sources */,
 				F1B9F5FF1E04051E0024AB95 /* RAObject.m in Sources */,
