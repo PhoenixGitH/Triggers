@@ -84,7 +84,7 @@
     }else{
         NSError * jsonError = nil;
         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:dataToReturn
-                                                             options:kNilOptions
+                                                             options:NSJSONWritingPrettyPrinted
                                                                error:&jsonError];
         
         if(jsonError){

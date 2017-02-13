@@ -38,7 +38,9 @@
 #import "Object.h"
 #import "RAObject.h"
 #import "RARest.h"
+#import "GetWeather.h"
 #import "DefaultView.h"
+#import "WeatherPackage.h"
 
 
 @interface ViewController ()
@@ -73,8 +75,7 @@
     [rar addKeyToOrder:@"weather"];
     // Search again, after the one up.
     [rar addKeyToOrder:@"description"];
-    
-    
+     
     DefaultView * dv = (DefaultView *)[rar getCreatingView];
     
     id result = [rar getValue];*/
@@ -173,10 +174,17 @@
     
      //End devices type.
     
-    //testing net status.
-    RANetStatus *net = [[RANetStatus alloc] init];
-    cond.leftPart = net;
+    //testing net status. Working.
+    /*RANetStatus *net = [[RANetStatus alloc] init];
+    cond.leftPart = net;*/
     
+    GetWeather *wea = [[GetWeather alloc] init];
+    NSDictionary *json = [wea valueForCity:@"Madrid"];
+    NSError *error;
+    WeatherPackage *pack = [[WeatherPackage alloc] initWithDictionary: json error:&error];
+    NSLog(@"%@", pack);
+    
+
     
     //--------- RIGHT PART ---------
 
