@@ -16,7 +16,7 @@ extern NSString * const api_key;
 @interface GetWeather : NSObject
 
 -(RARest *) valueForLatLongRARest: (NSString *) latlng;
--(NSDictionary *) valueForCity: (NSString *) city;
+-(RARest *) valueForCity: (NSString *) city;
 -(RARest *) valueForZipCode: (NSString *) zip;
 
 @end

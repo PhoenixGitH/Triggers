@@ -71,7 +71,7 @@
     [rar addParamWithKey:@"q" andValue:@"Madrid"];
     [rar addParamWithKey:@"APPID" andValue:@"6faefe9c835124150d6f782947a4c722"];
     
-    // Search for key inside de JSON
+    // Search for key inside the JSON
     [rar addKeyToOrder:@"weather"];
     // Search again, after the one up.
     [rar addKeyToOrder:@"description"];
@@ -85,6 +85,10 @@
     CurrentDeviceLocationView * cdv = (CurrentDeviceLocationView *) [racdl getCreatingView];
     [cdv locateUser];
     self.view = cdv;
+    
+    
+    [racdl setCountryCode];
+    NSLog(@"%@", [racdl getValue]);
     
     //int r = 2;
     
@@ -178,12 +182,17 @@
     /*RANetStatus *net = [[RANetStatus alloc] init];
     cond.leftPart = net;*/
     
+    // Testing Packages from Rest.
+    // Weather working, with wherever you need to find.
     GetWeather *wea = [[GetWeather alloc] init];
-    NSDictionary *json = [wea valueForCity:@"Madrid"];
+    RARest *rar = [wea valueForCity:@"Madrid"];
     NSError *error;
-    WeatherPackage *pack = [[WeatherPackage alloc] initWithDictionary: json error:&error];
-    NSLog(@"%@", pack);
+    WeatherPackage *pack = [[WeatherPackage alloc] initWithDictionary: [rar getValue] error:&error];
     
+    NumberValue *hum = [[NumberValue alloc] init];
+    hum.value = [NSNumber numberWithInteger: [[pack getMain] getHumidity]];
+    cond.leftPart = hum;
+    // End weather.
 
     
     //--------- RIGHT PART ---------
@@ -220,13 +229,19 @@
     /*StringValue *name = [[StringValue alloc] init];
     name.value = @"iOS";*/
     
-    StringValue *state = [[StringValue alloc] init];
+    // Testing device connectivity. Working!
+    /*StringValue *state = [[StringValue alloc] init];
     state.value = @"Wifi";
-    cond.rightPart = state;
+    cond.rightPart = state;*/
+    
+    //Testing a value of WeatherPackage.
+    NumberValue *humidity = [[NumberValue alloc] init];
+    humidity.value = [NSNumber numberWithInteger:100];
+    cond.rightPart = humidity;
     
     
     //--------- SET THE CONDITION OPERATOR ---------
-    cond.operator = equal;
+    cond.operator = lowerOrEqualThan;
     
     
     
@@ -245,7 +260,7 @@
     
     WAVisualAlert * wava = [[WAVisualAlert alloc] init];
     wava.title = @"Info";
-    wava.content = @"You are wifi connected";
+    wava.content = @"Humidity is less or equal to 94";
     [secTrigger.actions addObject:wava];
     
     

@@ -35,7 +35,7 @@
 -(Clouds *) getClouds{
     return _clouds;
 }
--(Weather *) getWeather{
+-(NSArray *) getWeather{
     return _weather;
 }
 -(Wind *)getWind{
@@ -61,14 +61,6 @@
 }
 -(int) getPressure{
     return _pressure;
-}
-
-@end
-
-@implementation Weather
-
--(NSArray *) getInfo{
-    return _weatherInfo;
 }
 
 @end

@@ -13,17 +13,21 @@ NSString * const api_key = @"6faefe9c835124150d6f782947a4c722";
 
 @implementation GetWeather
 
--(NSDictionary *) valueForCity: (NSString *) city{
-    /*RARest * rar = [[RARest alloc] init];
+-(RARest *) valueForCity: (NSString *) city{
+    RARest * rar = [[RARest alloc] init];
     rar.baseURL = @"http://api.openweathermap.org/data/2.5/weather?";
     [rar addParamWithKey:@"q" andValue:city];
-    [rar addParamWithKey:@"APPID" andValue:api_key];    return rar;*/
+    [rar addParamWithKey:@"APPID" andValue:api_key];    
+    return rar;
+    
+    /* Just a few testing.
+     
     NSError *error;
     NSString *url_string = [NSString stringWithFormat: @"http://api.openweathermap.org/data/2.5/weather?q=Madrid&APPID=%@",api_key];
     NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
-    return json;
+    return json;*/
 }
 
 -(RARest *) valueForLatLongRARest:(NSString *)latlng{

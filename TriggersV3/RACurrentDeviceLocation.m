@@ -12,7 +12,7 @@
 
 @implementation RACurrentDeviceLocation
 
-
+NSString *countryCode;
 
 - (instancetype)init
 {
@@ -25,20 +25,11 @@
 }
 
 
-
--(id)getValue{
-    
+-(void)setCountryCode{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
     AppDelegate * dele = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    float latitude = dele.manager.manager.location.coordinate.latitude;
-    float longitude = dele.manager.manager.location.coordinate.longitude;
-    
-    //CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
-    //__block NSString *countryCode;
-    
-    
-    //__block dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    //dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        /*[geocoder reverseGeocodeLocation:dele.manager.manager.location
+
+    [geocoder reverseGeocodeLocation:dele.manager.manager.location
                    completionHandler:^(NSArray *placemarks, NSError *error) {
                        NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
                        
@@ -59,14 +50,46 @@
                        NSLog(@"placemark.locality %@",placemark.locality);
                        NSLog(@"placemark.subLocality %@",placemark.subLocality);
                        NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
-                       //dispatch_semaphore_signal(semaphore);
+                   }
+     ];
+
+}
+
+-(id)getValue{
+    
+    AppDelegate * dele = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    float latitude = dele.manager.manager.location.coordinate.latitude;
+    float longitude = dele.manager.manager.location.coordinate.longitude;
+    
+    /*CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    __block NSString *countryCode;
+    
+    
+    [geocoder reverseGeocodeLocation:dele.manager.manager.location
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
                        
-                   }];*/
-        
-    //});
-        
-    //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    return [NSString stringWithFormat: @"%f,%f", latitude,longitude];
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                           
+                       }
+                       
+                       
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       
+                       NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
+                       countryCode = placemark.ISOcountryCode;
+                       NSLog(@"placemark.country %@",placemark.country);
+                       NSLog(@"placemark.postalCode %@",placemark.postalCode);
+                       NSLog(@"placemark.administrativeArea %@",placemark.administrativeArea);
+                       NSLog(@"placemark.locality %@",placemark.locality);
+                       NSLog(@"placemark.subLocality %@",placemark.subLocality);
+                       NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
+                   }
+     ];*/
+    
+    return countryCode;//[NSString stringWithFormat: @"%f,%f", latitude,longitude];
 
 }
 
