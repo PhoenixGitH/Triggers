@@ -25,10 +25,12 @@
 		423FA6FE1E4B3A9100104BFB /* RAOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA6FD1E4B3A9100104BFB /* RAOSVersion.m */; };
 		423FA7011E4B3E3300104BFB /* RADeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7001E4B3E3300104BFB /* RADeviceModel.m */; };
 		423FA7041E4B3EEC00104BFB /* RADeviceID.m in Sources */ = {isa = PBXBuildFile; fileRef = 423FA7031E4B3EEC00104BFB /* RADeviceID.m */; };
+		4249B95E1E54693300E40089 /* RACityName.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249B95D1E54693300E40089 /* RACityName.m */; };
 		42516DA01E4C5CCB00011E6A /* RANetStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 42516D9F1E4C5CCB00011E6A /* RANetStatus.m */; };
 		425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */; };
 		425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286151E448C020058F2EF /* RAGetCurrentHour.m */; };
 		425286191E449F530058F2EF /* RAGetCurrentDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286181E449F530058F2EF /* RAGetCurrentDate.m */; };
+		4299CD731E5462F6003ACF1B /* RACountryCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4299CD721E5462F6003ACF1B /* RACountryCode.m */; };
 		F1B9F5E71E02AAE90024AB95 /* RABatteryLevelPercentage.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */; };
 		F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */; };
 		F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5EC1E02B0040024AB95 /* WriteAction.m */; };
@@ -104,6 +106,8 @@
 		423FA7001E4B3E3300104BFB /* RADeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceModel.m; sourceTree = "<group>"; };
 		423FA7021E4B3EC400104BFB /* RADeviceID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADeviceID.h; sourceTree = "<group>"; };
 		423FA7031E4B3EEC00104BFB /* RADeviceID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADeviceID.m; sourceTree = "<group>"; };
+		4249B95C1E54692400E40089 /* RACityName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACityName.h; sourceTree = "<group>"; };
+		4249B95D1E54693300E40089 /* RACityName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACityName.m; sourceTree = "<group>"; };
 		42516D9E1E4C5B7C00011E6A /* RANetStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RANetStatus.h; sourceTree = "<group>"; };
 		42516D9F1E4C5CCB00011E6A /* RANetStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RANetStatus.m; sourceTree = "<group>"; };
 		425286111E4488E20058F2EF /* RAGetCurrentMinutes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentMinutes.h; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		425286151E448C020058F2EF /* RAGetCurrentHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentHour.m; sourceTree = "<group>"; };
 		425286171E449ED70058F2EF /* RAGetCurrentDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentDate.h; sourceTree = "<group>"; };
 		425286181E449F530058F2EF /* RAGetCurrentDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentDate.m; sourceTree = "<group>"; };
+		4299CD711E5462C1003ACF1B /* RACountryCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACountryCode.h; sourceTree = "<group>"; };
+		4299CD721E5462F6003ACF1B /* RACountryCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACountryCode.m; sourceTree = "<group>"; };
 		F1B9F5E51E02AAE90024AB95 /* RABatteryLevelPercentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatteryLevelPercentage.h; sourceTree = "<group>"; };
 		F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatteryLevelPercentage.m; sourceTree = "<group>"; };
 		F1B9F5E81E02AD060024AB95 /* RAGetCurrentSeconds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentSeconds.h; sourceTree = "<group>"; };
@@ -306,6 +312,10 @@
 			isa = PBXGroup;
 			children = (
 				F1B9F6091E0818B70024AB95 /* CurrentDeviceLocation */,
+				4299CD711E5462C1003ACF1B /* RACountryCode.h */,
+				4299CD721E5462F6003ACF1B /* RACountryCode.m */,
+				4249B95C1E54692400E40089 /* RACityName.h */,
+				4249B95D1E54693300E40089 /* RACityName.m */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -557,9 +567,11 @@
 				425286191E449F530058F2EF /* RAGetCurrentDate.m in Sources */,
 				F1B9F5F91E02D26A0024AB95 /* WAVisualAlert.m in Sources */,
 				F1D576001E01462000AC10DE /* Trigger.m in Sources */,
+				4299CD731E5462F6003ACF1B /* RACountryCode.m in Sources */,
 				4209CC0F1E4DBAE800BABC28 /* JSONAPI.m in Sources */,
 				425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */,
 				F1D576211E015D9900AC10DE /* StringValue.m in Sources */,
+				4249B95E1E54693300E40089 /* RACityName.m in Sources */,
 				F1B9F5F11E02B0340024AB95 /* WADevice.m in Sources */,
 				4209CBE91E4C629A00BABC28 /* Reachability.m in Sources */,
 				4209CC0D1E4DBAE800BABC28 /* JSONModelClassProperty.m in Sources */,

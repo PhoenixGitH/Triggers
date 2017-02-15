@@ -30,14 +30,16 @@
 }
 
 -(void)checkTriggers{
-    for(Trigger * t in _triggersArray){
-        BOOL shouldFire = [t shouldFire];
-        
-        //NSLog(@"ShouldFire trigger %@: %@", [t identifier], shouldFire?@"YES":@"NO");
-        if(shouldFire == YES){
-            [t executeActions];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for(Trigger * t in _triggersArray){
+            BOOL shouldFire = [t shouldFire];
+            
+            //NSLog(@"ShouldFire trigger %@: %@", [t identifier], shouldFire?@"YES":@"NO");
+            if(shouldFire == YES){
+                [t executeActions];
+            }
         }
-    }
+    });
 }
 
 

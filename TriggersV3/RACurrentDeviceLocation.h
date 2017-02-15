@@ -11,6 +11,5 @@
 
 @interface RACurrentDeviceLocation : RADevice
 
--(void)setCountryCode;
 
 @end

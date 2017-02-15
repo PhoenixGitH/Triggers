@@ -41,6 +41,9 @@
 #import "GetWeather.h"
 #import "DefaultView.h"
 #import "WeatherPackage.h"
+#import "RACountryCode.h"
+#import "RACityName.h"
+
 
 
 @interface ViewController ()
@@ -80,15 +83,6 @@
     
     id result = [rar getValue];*/
     
-    //Trying current Location.
-    RACurrentDeviceLocation * racdl = [[RACurrentDeviceLocation alloc] init];
-    CurrentDeviceLocationView * cdv = (CurrentDeviceLocationView *) [racdl getCreatingView];
-    [cdv locateUser];
-    self.view = cdv;
-    
-    
-    [racdl setCountryCode];
-    NSLog(@"%@", [racdl getValue]);
     
     //int r = 2;
     
@@ -118,7 +112,7 @@
     
     
     //--------- SHOULD EXECUTE ONLY ONCE? ---------
-    secTrigger.uniqueFire = YES;
+    secTrigger.uniqueFire = NO;
     
     
     //--------- LEFT PART ---------
@@ -184,16 +178,34 @@
     
     // Testing Packages from Rest.
     // Weather working, with wherever you need to find.
-    GetWeather *wea = [[GetWeather alloc] init];
+    /*GetWeather *wea = [[GetWeather alloc] init];
     RARest *rar = [wea valueForCity:@"Madrid"];
     NSError *error;
     WeatherPackage *pack = [[WeatherPackage alloc] initWithDictionary: [rar getValue] error:&error];
     
     NumberValue *hum = [[NumberValue alloc] init];
     hum.value = [NSNumber numberWithInteger: [[pack getMain] getHumidity]];
-    cond.leftPart = hum;
+    cond.leftPart = hum;*/
     // End weather.
+    
+    //Trying current Location. Working
+    /*RACurrentDeviceLocation * racdl = [[RACurrentDeviceLocation alloc] init];
+    CurrentDeviceLocationView * cdv = (CurrentDeviceLocationView *) [racdl getCreatingView];
+    [cdv locateUser];
+    self.view = cdv;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSLog(@"%@", [racdl getValue]);
+    });
+     cond.leftPart = racdl; */
 
+    // Trying countryCode. working
+    /*RACountryCode *rcc = [[RACountryCode alloc] init];
+    cond.leftPart = rcc;*/
+    
+    // Trying country. Working!
+    RACityName *rcn = [[RACityName alloc] init];
+    cond.leftPart = rcn;
     
     //--------- RIGHT PART ---------
 
@@ -234,14 +246,19 @@
     state.value = @"Wifi";
     cond.rightPart = state;*/
     
-    //Testing a value of WeatherPackage.
-    NumberValue *humidity = [[NumberValue alloc] init];
+    //Testing a value of WeatherPackage. Working
+    /*NumberValue *humidity = [[NumberValue alloc] init];
     humidity.value = [NSNumber numberWithInteger:100];
-    cond.rightPart = humidity;
+    cond.rightPart = humidity;*/
+    
+    // Testing country things. Working!
+    StringValue *cou = [[StringValue alloc] init];
+    cou.value = @"United States";
+    cond.rightPart = cou;
     
     
     //--------- SET THE CONDITION OPERATOR ---------
-    cond.operator = lowerOrEqualThan;
+    cond.operator = equal;
     
     
     
@@ -260,7 +277,7 @@
     
     WAVisualAlert * wava = [[WAVisualAlert alloc] init];
     wava.title = @"Info";
-    wava.content = @"Humidity is less or equal to 94";
+    wava.content = @"You are in US";
     [secTrigger.actions addObject:wava];
     
     
