@@ -43,6 +43,8 @@
 #import "WeatherPackage.h"
 #import "RACountryCode.h"
 #import "RACityName.h"
+#import "APIModel.h"
+#import "CallModel.h"
 
 
 
@@ -52,6 +54,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -59,7 +62,9 @@
     dele = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     dele.manager = [[LocationManager alloc]init];
     
-    
+}
+
+- (void) viewDidAppear:(BOOL)animated{
     //Test things
     [self testThings];
 }
@@ -84,9 +89,50 @@
     id result = [rar getValue];*/
     
     
-    //int r = 2;
+    RARest * rar = [[RARest alloc] init];
+    rar.baseURL = @"https://triggerstest.herokuapp.com/api/API/WeatherAPI";
+    
+    // Search for key inside the JSON
+    // [rar addKeyToOrder:@"params"];
+    
+    // DefaultView * dv = (DefaultView *)[rar getCreatingView];
+    
+    id result = [rar getValue];
+    NSError *err;
+    APIModel *api = [[APIModel alloc] initWithDictionary:result error:&err];
+    
+    
+    NSArray <ParametersModel*> *parametros = [api getParams];
+    NSMutableArray <ParameterModel*> *params = [[NSMutableArray alloc] init];
+    
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_enter(group);
+    
     
 
+    [self showDialog: [[parametros objectAtIndex:0] getNombre] andParam:[[parametros objectAtIndex:0] getTipo] andGroup:group];
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    
+    for(int i = 0; i<parametros.count; i++){
+        
+        ParameterModel *param = [[ParameterModel alloc] initWithValues:[[parametros objectAtIndex:i] getNombre] andValue:@"10"];
+        [params addObject:param];
+    }
+    
+    NSArray *values = [api getValues];
+    
+    for(int i = 0; i<values.count; i++){
+        CallModel *call = [[CallModel alloc] initWithValues:params andUrl:[api getURL] andParam:[[values objectAtIndex:i] getRuta]];
+        NSLog(@"Hola tenemos un api con valores: %@", call);
+        NSData *dict = [call toJSONData];
+        WARest *rest = [[WARest alloc] init];
+        rest.baseURL = @"http://triggerstest.herokuapp.com/api/Call";
+        rest.data = dict;
+        [rest writeValue];
+    }
+    
+    //int r = 2;
     
     Condition * cond = [[Condition alloc] init];
     
@@ -293,11 +339,56 @@
     
 }
 
+-(void) showDialog: (NSString *)name andParam:(NSString *)tipo andGroup:(dispatch_group_t) group{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *string = [NSString stringWithFormat:@"Introduce %@ del tipo %@",name,tipo];
+        UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Parameter required"
+                                 message:string
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+        UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Validate"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    NSString *texto = [[alert textFields][0] text];
+                                    if([self validate:texto andType:tipo]){
+                                        dispatch_group_leave(group);
+                                    }else{
+                                        [self showDialog: name andParam:tipo andGroup:group];
+                                    }
+                                }];
+    
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Insert value";
+        textField.secureTextEntry = YES;
+        }];
+        [alert addAction:yesButton];
+        [self presentViewController:alert animated:NO completion:nil];
+        NSLog(@"\n");
+    });
+}
+
+-(bool) validate: (NSString *)value andType:(NSString *) tipo {
+    if([tipo caseInsensitiveCompare: @"String"]){
+        return true;
+    }else if([tipo caseInsensitiveCompare: @"Double"]){
+        return [tipo caseInsensitiveCompare: @"0.0"] || ([value doubleValue] != 0.0);
+    }else if([tipo caseInsensitiveCompare: @"Float"]){
+        return [tipo caseInsensitiveCompare: @"0.0"] || ([value floatValue] != 0.0);
+    }else if([tipo caseInsensitiveCompare: @"Double"]){
+        return [tipo caseInsensitiveCompare: @"0"] || ([value intValue] != 0);
+    }
+    return false;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end

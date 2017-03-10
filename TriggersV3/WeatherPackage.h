@@ -57,6 +57,8 @@
 
 @end
 
+@protocol WeatherInfo;
+
 @interface WeatherInfo : JSONModel
 
 @property (nonatomic) NSString *name;
@@ -82,7 +84,7 @@
 @property (nonatomic) System *sys;
 @property (nonatomic) Clouds *clouds;
 @property (nonatomic) Wind *wind;
-@property (nonatomic) NSArray <WeatherInfo *> *weather;
+@property (nonatomic) NSArray <WeatherInfo> *weather;
 
 
 -(NSString *) getName;
@@ -92,7 +94,7 @@
 -(NSString *) getBase;
 -(Main *) getMain;
 -(System *) getSys;
--(NSArray *) getWeather;
+-(NSArray<WeatherInfo> *) getWeather;
 -(Clouds *) getClouds;
 -(Wind *) getWind;
 

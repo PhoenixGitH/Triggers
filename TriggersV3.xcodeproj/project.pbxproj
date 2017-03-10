@@ -30,7 +30,9 @@
 		425286131E44890F0058F2EF /* RAGetCurrentMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286121E44890F0058F2EF /* RAGetCurrentMinutes.m */; };
 		425286161E448C020058F2EF /* RAGetCurrentHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286151E448C020058F2EF /* RAGetCurrentHour.m */; };
 		425286191E449F530058F2EF /* RAGetCurrentDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425286181E449F530058F2EF /* RAGetCurrentDate.m */; };
+		426264901E6993D50055C26C /* APIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4262648F1E6993D50055C26C /* APIModel.m */; };
 		4299CD731E5462F6003ACF1B /* RACountryCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4299CD721E5462F6003ACF1B /* RACountryCode.m */; };
+		42E5B0301E6D72E5009EBE42 /* CallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E5B02F1E6D72E5009EBE42 /* CallModel.m */; };
 		F1B9F5E71E02AAE90024AB95 /* RABatteryLevelPercentage.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */; };
 		F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */; };
 		F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5EC1E02B0040024AB95 /* WriteAction.m */; };
@@ -116,8 +118,12 @@
 		425286151E448C020058F2EF /* RAGetCurrentHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentHour.m; sourceTree = "<group>"; };
 		425286171E449ED70058F2EF /* RAGetCurrentDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentDate.h; sourceTree = "<group>"; };
 		425286181E449F530058F2EF /* RAGetCurrentDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAGetCurrentDate.m; sourceTree = "<group>"; };
+		4262648E1E6991740055C26C /* APIModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIModel.h; sourceTree = "<group>"; };
+		4262648F1E6993D50055C26C /* APIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIModel.m; sourceTree = "<group>"; };
 		4299CD711E5462C1003ACF1B /* RACountryCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACountryCode.h; sourceTree = "<group>"; };
 		4299CD721E5462F6003ACF1B /* RACountryCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACountryCode.m; sourceTree = "<group>"; };
+		42E5B02E1E6D6FE5009EBE42 /* CallModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallModel.h; sourceTree = "<group>"; };
+		42E5B02F1E6D72E5009EBE42 /* CallModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallModel.m; sourceTree = "<group>"; };
 		F1B9F5E51E02AAE90024AB95 /* RABatteryLevelPercentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatteryLevelPercentage.h; sourceTree = "<group>"; };
 		F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatteryLevelPercentage.m; sourceTree = "<group>"; };
 		F1B9F5E81E02AD060024AB95 /* RAGetCurrentSeconds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentSeconds.h; sourceTree = "<group>"; };
@@ -274,6 +280,19 @@
 			name = DeviceInfo;
 			sourceTree = "<group>";
 		};
+		4262648D1E698F8C0055C26C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4209CBED1E4DA37600BABC28 /* WeatherPackage.h */,
+				4209CBEE1E4DA79700BABC28 /* WeatherPackage.m */,
+				4262648E1E6991740055C26C /* APIModel.h */,
+				4262648F1E6993D50055C26C /* APIModel.m */,
+				42E5B02E1E6D6FE5009EBE42 /* CallModel.h */,
+				42E5B02F1E6D72E5009EBE42 /* CallModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F1B9F5EE1E02B00D0024AB95 /* WriteActions */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,8 +418,7 @@
 				F1D575D81E0145F900AC10DE /* Supporting Files */,
 				4209CBEA1E4C662900BABC28 /* GetWeather.h */,
 				4209CBEB1E4C675800BABC28 /* GetWeather.m */,
-				4209CBED1E4DA37600BABC28 /* WeatherPackage.h */,
-				4209CBEE1E4DA79700BABC28 /* WeatherPackage.m */,
+				4262648D1E698F8C0055C26C /* Models */,
 			);
 			path = TriggersV3;
 			sourceTree = "<group>";
@@ -552,6 +570,7 @@
 				F1B9F6021E0409500024AB95 /* WAUpdateObjectAttribute.m in Sources */,
 				F1B9F5E71E02AAE90024AB95 /* RABatteryLevelPercentage.m in Sources */,
 				F1D576041E0149DA00AC10DE /* RADevice.m in Sources */,
+				426264901E6993D50055C26C /* APIModel.m in Sources */,
 				F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */,
 				F1D5760A1E0149FC00AC10DE /* RABatteryLevelNormalized.m in Sources */,
 				423FA6FB1E4B391400104BFB /* RAOperativeSystem.m in Sources */,
@@ -574,6 +593,7 @@
 				4249B95E1E54693300E40089 /* RACityName.m in Sources */,
 				F1B9F5F11E02B0340024AB95 /* WADevice.m in Sources */,
 				4209CBE91E4C629A00BABC28 /* Reachability.m in Sources */,
+				42E5B0301E6D72E5009EBE42 /* CallModel.m in Sources */,
 				4209CC0D1E4DBAE800BABC28 /* JSONModelClassProperty.m in Sources */,
 				F1D576071E0149E600AC10DE /* RARest.m in Sources */,
 				F1D575FD1E01462000AC10DE /* Condition.m in Sources */,

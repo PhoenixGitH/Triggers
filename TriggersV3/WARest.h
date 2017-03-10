@@ -11,7 +11,7 @@
 @interface WARest : WriteAction
 
 @property NSString * baseURL;
-@property NSMutableDictionary * dictionary;
+@property NSData * data;
 
 
 @end

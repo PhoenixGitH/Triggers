@@ -57,7 +57,6 @@
     
     
     dispatch_group_t group = dispatch_group_create();
-    
     dispatch_group_enter(group);
     
     __block NSData * dataToReturn = nil;

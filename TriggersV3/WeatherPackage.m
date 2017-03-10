@@ -3,7 +3,7 @@
 //  TriggersV3
 //
 //  Created by MISO on 10/2/17.
-//  Copyright © 2017 Diego. All rights reserved.
+//  Copyright © 2017 Javier. All rights reserved.
 //
 
 #import "WeatherPackage.h"
@@ -35,7 +35,7 @@
 -(Clouds *) getClouds{
     return _clouds;
 }
--(NSArray *) getWeather{
+-(NSArray<WeatherInfo> *) getWeather{
     return _weather;
 }
 -(Wind *)getWind{
