@@ -54,6 +54,121 @@
 
 @implementation ViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    /*if (self){
+        [self initializeForm];
+    }*/
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    /*if (self){
+        [self initializeForm];
+    }*/
+    return self;
+}
+
+- (void) typeForm: (NSArray *) parametros andSeccion: (XLFormSectionDescriptor *) seccion andCounter: (int) i{
+    XLFormRowDescriptor * row;
+    NSString *tipo = [parametros[i] getTipo];
+    if([tipo caseInsensitiveCompare: @"String"] == NSOrderedSame){
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"textField%i",i] rowType:XLFormRowDescriptorTypeText title:[parametros[i] getNombre]];
+        [row.cellConfigAtConfigure setObject:[parametros[i] getTipo] forKey:@"textField.placeholder"];
+    }else if([tipo caseInsensitiveCompare: @"Double"] == NSOrderedSame){
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"textField%i",i] rowType:XLFormRowDescriptorTypeNumber title:[parametros[i] getNombre]];
+        [row.cellConfigAtConfigure setObject:[parametros[i] getTipo] forKey:@"textField.placeholder"];
+    }else if([tipo caseInsensitiveCompare: @"Float"] == NSOrderedSame){
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"textField%i",i] rowType:XLFormRowDescriptorTypeNumber title:[parametros[i] getNombre]];
+        [row.cellConfigAtConfigure setObject:[parametros[i] getTipo] forKey:@"textField.placeholder"];
+    }else if([tipo caseInsensitiveCompare: @"Double"] == NSOrderedSame){
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"textField%i",i] rowType:XLFormRowDescriptorTypeNumber title:[parametros[i] getNombre]];
+        [row.cellConfigAtConfigure setObject:[parametros[i] getTipo] forKey:@"textField.placeholder"];
+    }else{
+        return;
+    }
+    [seccion addFormRow:row];
+
+}
+
+- (void) fillNewSection: (XLFormSectionDescriptor *) section andApi:(APIModel*) api{
+    
+    NSArray *parametros = [api getParams];
+    
+    for(int i = 0; i<parametros.count; i++){
+     // Title
+     NSLog(@"Value: %i", i);
+     [self typeForm:parametros andSeccion:section andCounter:i];
+    }
+    XLFormRowDescriptor *row;
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:nil rowType:XLFormRowDescriptorTypeButton title:@"Send"];
+    row.action.formBlock = ^(XLFormRowDescriptor * sender) {
+        [self validate: api];
+    };
+    
+    NSMutableArray* opt = [[NSMutableArray alloc] init];
+    int i = 0;
+    for(ValueModel* value in [api getValues]){
+        XLFormOptionsObject* obj = [XLFormOptionsObject formOptionsObjectWithValue:@(i) displayText:[value getNombre]];
+        [opt addObject:obj];
+        i++;
+    }
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"param" rowType:XLFormRowDescriptorTypeSelectorActionSheet title:@"Value to get:" ];
+    row.selectorOptions = opt;
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:nil displayText:@"Select a value"];
+    
+    [section addFormRow:row];
+
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:nil rowType:XLFormRowDescriptorTypeButton title:@"Validate" ];
+    
+    row.action.formBlock = ^(XLFormRowDescriptor * sender){
+        [self validate: api];
+    };
+    [section addFormRow:row];
+    
+}
+
+- (void)initializeForm: /*(NSArray *) parametros Apis:*/(NSArray *) apis{ //andValues: (NSArray*) values{
+    XLFormDescriptor * form;
+    XLFormSectionDescriptor * section;
+    XLFormRowDescriptor * row;
+    
+    form = [XLFormDescriptor formDescriptorWithTitle:@"Ask for a value"];
+    
+    // First section
+    section = [XLFormSectionDescriptor formSection];
+    section.title = @"Seleccione un api";
+    
+    NSMutableArray* opt = [[NSMutableArray alloc] init];
+    
+    for(APIModel* value in apis){
+        XLFormOptionsObject* obj = [XLFormOptionsObject formOptionsObjectWithValue:[value getName] displayText:[value getName]];
+        [opt addObject:obj];
+    }
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:nil rowType:XLFormRowDescriptorTypeSelectorActionSheet title:@"API" ];
+    row.selectorOptions = opt;
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Select a value"];
+    [section addFormRow:row];
+    [form addFormSection:section];
+    
+    // 2nd section
+    section = [XLFormSectionDescriptor formSection];
+    section.title = @"Introduce los parametros necesarios";
+    //section.hidden = @YES;
+    
+    [self fillNewSection:section andApi: apis[1]];
+    
+    [form addFormSection:section];
+    
+    
+    self.form = form;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,7 +205,7 @@
     
     
     RARest * rar = [[RARest alloc] init];
-    rar.baseURL = @"https://triggerstest.herokuapp.com/api/API/WeatherAPI";
+    rar.baseURL = @"https://triggerstest.herokuapp.com/api/API/";
     
     // Search for key inside the JSON
     // [rar addKeyToOrder:@"params"];
@@ -98,39 +213,24 @@
     // DefaultView * dv = (DefaultView *)[rar getCreatingView];
     
     id result = [rar getValue];
+    
     NSError *err;
-    APIModel *api = [[APIModel alloc] initWithDictionary:result error:&err];
     
-    
-    NSArray <ParametersModel*> *parametros = [api getParams];
-    NSMutableArray <ParameterModel*> *params = [[NSMutableArray alloc] init];
-    
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_enter(group);
-    
-    
-
-    [self showDialog: [[parametros objectAtIndex:0] getNombre] andParam:[[parametros objectAtIndex:0] getTipo] andGroup:group];
-    
-    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-    
-    for(int i = 0; i<parametros.count; i++){
-        
-        ParameterModel *param = [[ParameterModel alloc] initWithValues:[[parametros objectAtIndex:i] getNombre] andValue:@"10"];
-        [params addObject:param];
+    //NSDictionary* dict = [result dictionaryRepresentation];
+    NSArray* api = [result objectForKey:@"APIs"];
+    NSMutableArray* apis = [[NSMutableArray alloc] init];
+    for (id key in api)
+    {
+        APIModel *api = [[APIModel alloc] initWithDictionary:key error:&err];
+        [apis addObject:api];
     }
     
-    NSArray *values = [api getValues];
     
-    for(int i = 0; i<values.count; i++){
-        CallModel *call = [[CallModel alloc] initWithValues:params andUrl:[api getURL] andParam:[[values objectAtIndex:i] getRuta]];
-        NSLog(@"Hola tenemos un api con valores: %@", call);
-        NSData *dict = [call toJSONData];
-        WARest *rest = [[WARest alloc] init];
-        rest.baseURL = @"http://triggerstest.herokuapp.com/api/Call";
-        rest.data = dict;
-        [rest writeValue];
-    }
+    //APIModel *api = [[APIModel alloc] initWithDictionary:result error:&err];
+    
+    
+    [self initializeForm: apis];
+    //[self showDialog: [[parametros objectAtIndex:0] getNombre] andParam:[[parametros objectAtIndex:0] getTipo] andGroup:group];
     
     //int r = 2;
     
@@ -334,12 +434,12 @@
     
     
     //--------- ADD THIS TRIGGER TO THE ARRAY ---------
-    [dele.triggersArray addObject:secTrigger];
+    //[dele.triggersArray addObject:secTrigger];
     
     
 }
 
--(void) showDialog: (NSString *)name andParam:(NSString *)tipo andGroup:(dispatch_group_t) group{
+/*-(void) showDialog: (NSString *)name andParam:(NSString *)tipo andGroup:(dispatch_group_t) group{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSString *string = [NSString stringWithFormat:@"Introduce %@ del tipo %@",name,tipo];
         UIAlertController * alert = [UIAlertController
@@ -368,19 +468,65 @@
         [self presentViewController:alert animated:NO completion:nil];
         NSLog(@"\n");
     });
+}*/
+
+- (NSDictionary *) getValues{
+    NSMutableDictionary * result = [NSMutableDictionary dictionary];
+    for (XLFormSectionDescriptor * section in self.form.formSections) {
+        if (!section.isMultivaluedSection){
+            for (XLFormRowDescriptor * row in section.formRows) {
+                if (row.tag && ![row.tag isEqualToString:@""]){
+                    [result setObject:(row.value ?: [NSNull null]) forKey:row.tag];
+                }
+            }
+        }
+        else{
+            NSMutableArray * multiValuedValuesArray = [NSMutableArray new];
+            for (XLFormRowDescriptor * row in section.formRows) {
+                if (row.value){
+                    [multiValuedValuesArray addObject:row.value];
+                }
+            }
+            [result setObject:multiValuedValuesArray forKey:section.multivaluedTag];
+        }
+    }
+    return result;
 }
 
--(bool) validate: (NSString *)value andType:(NSString *) tipo {
-    if([tipo caseInsensitiveCompare: @"String"]){
-        return true;
-    }else if([tipo caseInsensitiveCompare: @"Double"]){
-        return [tipo caseInsensitiveCompare: @"0.0"] || ([value doubleValue] != 0.0);
-    }else if([tipo caseInsensitiveCompare: @"Float"]){
-        return [tipo caseInsensitiveCompare: @"0.0"] || ([value floatValue] != 0.0);
-    }else if([tipo caseInsensitiveCompare: @"Double"]){
-        return [tipo caseInsensitiveCompare: @"0"] || ([value intValue] != 0);
+
+-(void) validate: (APIModel *) api{
+    NSDictionary *dict = [self getValues];
+    
+    NSArray *parameters = [api getParams];
+    NSMutableArray <ParameterModel*> *params = [[NSMutableArray alloc] init];
+    
+    for(int i = 0; i<parameters.count; i++){
+        id val = [dict objectForKey:[NSString stringWithFormat:@"textField%i",i]];
+        if(val == [NSNull null] || val == [NSDecimalNumber notANumber]){
+            WAVisualAlert * wava = [[WAVisualAlert alloc] init];
+            wava.title = @"Info";
+            wava.content = @"Be sure to check every value type.";
+            [wava writeValue];
+            return;
+        }
+        ParameterModel *param = [[ParameterModel alloc] initWithValues:[parameters[i] getNombre] andValue:val];
+        [params addObject:param];
     }
-    return false;
+    
+    NSArray *values = [api getValues];
+    id get = [[dict objectForKey:@"param"] valueData];
+    
+    //for(int i = 0; i<values.count; i++){
+        CallModel *call = [[CallModel alloc] initWithValues:params andUrl:[api getURL] andParam:[[values objectAtIndex:[get integerValue]] getRuta]];
+        NSLog(@"Hola tenemos un api con valores: %@", call);
+        NSData *data = [call toJSONData];
+        WARest *rest = [[WARest alloc] init];
+        rest.baseURL = @"http://triggerstest.herokuapp.com/api/Call";
+        rest.data = data;
+        [rest writeValue];
+    //}
+    
+    
 }
 
 
@@ -388,7 +534,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 @end

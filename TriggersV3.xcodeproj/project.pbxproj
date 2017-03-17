@@ -33,6 +33,7 @@
 		426264901E6993D50055C26C /* APIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4262648F1E6993D50055C26C /* APIModel.m */; };
 		4299CD731E5462F6003ACF1B /* RACountryCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4299CD721E5462F6003ACF1B /* RACountryCode.m */; };
 		42E5B0301E6D72E5009EBE42 /* CallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E5B02F1E6D72E5009EBE42 /* CallModel.m */; };
+		7C380F548DEB839850DF062F /* libPods-TriggersV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70C1C1D914986A92FB9B879 /* libPods-TriggersV3.a */; };
 		F1B9F5E71E02AAE90024AB95 /* RABatteryLevelPercentage.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */; };
 		F1B9F5EA1E02AD060024AB95 /* RAGetCurrentSeconds.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5E91E02AD060024AB95 /* RAGetCurrentSeconds.m */; };
 		F1B9F5ED1E02B0040024AB95 /* WriteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B9F5EC1E02B0040024AB95 /* WriteAction.m */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B5F790DF34D64239DA482BB /* Pods-TriggersV3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriggersV3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriggersV3/Pods-TriggersV3.debug.xcconfig"; sourceTree = "<group>"; };
 		4209CBE71E4C628200BABC28 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4209CBE81E4C629A00BABC28 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4209CBEA1E4C662900BABC28 /* GetWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetWeather.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		4299CD721E5462F6003ACF1B /* RACountryCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACountryCode.m; sourceTree = "<group>"; };
 		42E5B02E1E6D6FE5009EBE42 /* CallModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallModel.h; sourceTree = "<group>"; };
 		42E5B02F1E6D72E5009EBE42 /* CallModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallModel.m; sourceTree = "<group>"; };
+		C784686C3FFBF4AD7B6A1792 /* Pods-TriggersV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriggersV3.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriggersV3/Pods-TriggersV3.release.xcconfig"; sourceTree = "<group>"; };
 		F1B9F5E51E02AAE90024AB95 /* RABatteryLevelPercentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatteryLevelPercentage.h; sourceTree = "<group>"; };
 		F1B9F5E61E02AAE90024AB95 /* RABatteryLevelPercentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatteryLevelPercentage.m; sourceTree = "<group>"; };
 		F1B9F5E81E02AD060024AB95 /* RAGetCurrentSeconds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAGetCurrentSeconds.h; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 		F1D5761C1E015C1E00AC10DE /* NumberValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberValue.m; sourceTree = "<group>"; };
 		F1D5761F1E015D9900AC10DE /* StringValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringValue.h; sourceTree = "<group>"; };
 		F1D576201E015D9900AC10DE /* StringValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringValue.m; sourceTree = "<group>"; };
+		F70C1C1D914986A92FB9B879 /* libPods-TriggersV3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriggersV3.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 			files = (
 				4209CBF11E4DB95D00BABC28 /* SystemConfiguration.framework in Frameworks */,
 				F1B9F6111E081A790024AB95 /* MapKit.framework in Frameworks */,
+				7C380F548DEB839850DF062F /* libPods-TriggersV3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +298,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		E2392F22A560B456D4B5FE50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F790DF34D64239DA482BB /* Pods-TriggersV3.debug.xcconfig */,
+				C784686C3FFBF4AD7B6A1792 /* Pods-TriggersV3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F1B9F5EE1E02B00D0024AB95 /* WriteActions */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +380,7 @@
 			children = (
 				4209CBF01E4DB95D00BABC28 /* SystemConfiguration.framework */,
 				F1B9F6101E081A790024AB95 /* MapKit.framework */,
+				F70C1C1D914986A92FB9B879 /* libPods-TriggersV3.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -376,6 +391,7 @@
 				F1D575D71E0145F900AC10DE /* TriggersV3 */,
 				F1D575D61E0145F900AC10DE /* Products */,
 				F1B9F60F1E081A790024AB95 /* Frameworks */,
+				E2392F22A560B456D4B5FE50 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -482,9 +498,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1D575EC1E0145F900AC10DE /* Build configuration list for PBXNativeTarget "TriggersV3" */;
 			buildPhases = (
+				2687008D85538BF2B65BF20D /* [CP] Check Pods Manifest.lock */,
 				F1D575D11E0145F900AC10DE /* Sources */,
 				F1D575D21E0145F900AC10DE /* Frameworks */,
 				F1D575D31E0145F900AC10DE /* Resources */,
+				348BF1D416FB396DFF5190B1 /* [CP] Embed Pods Frameworks */,
+				4DDCB0BCCC41FCE8240D9803 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -544,6 +563,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2687008D85538BF2B65BF20D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		348BF1D416FB396DFF5190B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriggersV3/Pods-TriggersV3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DDCB0BCCC41FCE8240D9803 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriggersV3/Pods-TriggersV3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1D575D11E0145F900AC10DE /* Sources */ = {
@@ -721,6 +788,7 @@
 		};
 		F1D575ED1E0145F900AC10DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B5F790DF34D64239DA482BB /* Pods-TriggersV3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TEAF832HEC;
@@ -734,6 +802,7 @@
 		};
 		F1D575EE1E0145F900AC10DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C784686C3FFBF4AD7B6A1792 /* Pods-TriggersV3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TEAF832HEC;

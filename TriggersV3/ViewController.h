@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "XLForm.h"
 
 
-@interface ViewController : UIViewController{
+@interface ViewController : XLFormViewController{
     AppDelegate * dele;
 }
 
