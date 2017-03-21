@@ -92,7 +92,17 @@
 
 }
 
-- (void) fillNewSection: (XLFormSectionDescriptor *) section andApi:(APIModel*) api{
+- (void) showSection: (APIModel*) api{
+    
+    XLFormSectionDescriptor *section = [self.form formSectionAtIndex:1];
+    [self.form removeFormSection:section];
+    [self fillNewSection: api];
+}
+
+- (void) fillNewSection: (APIModel*) api{
+    
+    XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSection];
+    section.title = @"Introduce los parametros necesarios";
     
     NSArray *parametros = [api getParams];
     
@@ -129,6 +139,7 @@
         [self validate: api];
     };
     [section addFormRow:row];
+    [self.form addFormSection:section];
     
 }
 
@@ -158,13 +169,10 @@
     
     // 2nd section
     section = [XLFormSectionDescriptor formSection];
-    section.title = @"Introduce los parametros necesarios";
-    //section.hidden = @YES;
     
-    [self fillNewSection:section andApi: apis[1]];
+    //[self fillNewSection:section andApi: apis[1]];
     
     [form addFormSection:section];
-    
     
     self.form = form;
 }
@@ -527,6 +535,17 @@
     //}
     
     
+}
+
+- (void) formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue{
+    if([formRow.title  isEqual: @"API"]){
+        RARest * rar = [[RARest alloc] init];
+        rar.baseURL = [@"https://triggerstest.herokuapp.com/api/API/" stringByAppendingString: [newValue valueData]];
+        id result = [rar getValue];
+        NSError *err;
+        APIModel *api = [[APIModel alloc] initWithDictionary:result error:&err];
+        [self showSection:api];
+    }
 }
 
 

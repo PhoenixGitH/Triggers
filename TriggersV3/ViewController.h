@@ -11,7 +11,7 @@
 #import "XLForm.h"
 
 
-@interface ViewController : XLFormViewController{
+@interface ViewController : XLFormViewController<XLFormDescriptorDelegate>{
     AppDelegate * dele;
 }
 
