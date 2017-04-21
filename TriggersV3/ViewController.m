@@ -201,6 +201,8 @@
     rar.baseURL = @"http://api.openweathermap.org/data/2.5/weather?";
     [rar addParamWithKey:@"q" andValue:@"Madrid"];
     [rar addParamWithKey:@"APPID" andValue:@"6faefe9c835124150d6f782947a4c722"];
+    // Token air: 4c70b9576ce064a7c799f51c17f40ffdb4f929fd
+
     
     // Search for key inside the JSON
     [rar addKeyToOrder:@"weather"];
@@ -509,8 +511,9 @@
     NSMutableArray <ParameterModel*> *params = [[NSMutableArray alloc] init];
     
     for(int i = 0; i<parameters.count; i++){
+        NSString *tipo = [parameters[i] getTipo];
         id val = [dict objectForKey:[NSString stringWithFormat:@"textField%i",i]];
-        if(val == [NSNull null] || val == [NSDecimalNumber notANumber]){
+        if(val == [NSNull null] || val == [NSDecimalNumber notANumber] || ([tipo caseInsensitiveCompare: @"String"] == NSOrderedSame && [val integerValue])){
             WAVisualAlert * wava = [[WAVisualAlert alloc] init];
             wava.title = @"Info";
             wava.content = @"Be sure to check every value type.";
@@ -525,7 +528,7 @@
     id get = [[dict objectForKey:@"param"] valueData];
     
     //for(int i = 0; i<values.count; i++){
-        CallModel *call = [[CallModel alloc] initWithValues:params andUrl:[api getURL] andParam:[[values objectAtIndex:[get integerValue]] getRuta]];
+    CallModel *call = [[CallModel alloc] initWithValues:params andUrl:[api getURL] andParam:[[values objectAtIndex:[get integerValue]] getRuta] andAuth: [api getAuth]];
         NSLog(@"Hola tenemos un api con valores: %@", call);
         NSData *data = [call toJSONData];
         WARest *rest = [[WARest alloc] init];

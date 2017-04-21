@@ -28,12 +28,17 @@
 
 @implementation CallModel
 
--(id) initWithValues:(NSArray<ParameterModel> *)params andUrl:(NSString *)url andParam:(NSString *)param{
+-(id) initWithValues:(NSArray<ParameterModel> *)params andUrl:(NSString *)url andParam:(NSString *)param andAuth:(AuthModel *) auth{
     self = [self init];
     self.params = params;
     self.url = url;
     self.parametro = param;
+    self.auth = auth;
     return self;
+}
+
+-(AuthModel *) getAuth{
+    return _auth;
 }
 
 -(NSString *) getUrl{

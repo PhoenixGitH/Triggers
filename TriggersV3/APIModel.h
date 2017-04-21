@@ -11,6 +11,18 @@
 
 #import "JSONModel.h"
 
+@protocol AuthModel;
+
+@interface AuthModel : JSONModel
+
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *value;
+
+-(NSString *) getName;
+-(NSString *) getValue;
+
+@end
+
 @protocol ParametersModel;
 
 @interface ParametersModel : JSONModel
@@ -42,12 +54,14 @@
 @interface APIModel : JSONModel
 
 @property (nonatomic) NSString *name;
+@property (nonatomic) AuthModel<Optional> *auth;
 @property (nonatomic) NSString *description;
 @property (nonatomic) NSArray <ParametersModel> *params;
 @property (nonatomic) NSArray <ValueModel> *values;
 @property (nonatomic) NSString *protocol;
 @property (nonatomic) NSString *url;
 
+-(AuthModel *) getAuth;
 -(NSString *) getName;
 -(NSString *) getURL;
 -(NSString *) getDescription;

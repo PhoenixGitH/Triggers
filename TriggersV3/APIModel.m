@@ -8,6 +8,18 @@
 
 #import "APIModel.h"
 
+@implementation AuthModel
+
+-(NSString *) getName{
+    return _name;
+}
+
+-(NSString *) getValue{
+    return _value;
+}
+
+@end
+
 @implementation ParametersModel
 
 -(NSString *) getNombre{
@@ -38,6 +50,10 @@
 
 
 @implementation APIModel
+
+-(AuthModel *) getAuth{
+    return _auth;
+}
 
 -(NSString *) getName{
     return _name;

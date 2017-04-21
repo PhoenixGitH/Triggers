@@ -10,6 +10,7 @@
 #define CallModel_h
 
 #import "JSONModel.h"
+#import "APIModel.h"
 
 @protocol ParameterModel;
 
@@ -28,12 +29,14 @@
 
 @interface CallModel : JSONModel
 
--(id) initWithValues: (NSArray *)params andUrl: (NSString *) url andParam: (NSString *)param;
+-(id) initWithValues: (NSArray *)params andUrl: (NSString *) url andParam: (NSString *)param andAuth: (AuthModel *) auth;
 
 @property (nonatomic) NSArray <ParameterModel> *params;
 @property (nonatomic) NSString *url;
 @property (nonatomic) NSString *parametro;
+@property (nonatomic) AuthModel *auth;
 
+-(AuthModel *) getAuth;
 -(NSString *) getUrl;
 -(NSArray *) getParams;
 -(NSString *) getParametro;
